@@ -1,0 +1,20 @@
+/* starting clean */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; /* makes every element inherit the box-sizing property from it's parent element (body) */
+}
+
+html {
+  // defines what 1rem is
+  font-size: 62.5%;
+  /* bad practice to use pixels because doing so will override the font size setting that the user can manually change in the settings */
+  /* To combat this, we use percentages which uses the default font-size as reference. Default font-size is 16px */
+}
+
+body {
+  box-sizing: border-box; /* What this does is to change the box model so that the borders and the paddings are no longer added to the total width/height that we specify for a box */
+  padding: 3rem;
+}
