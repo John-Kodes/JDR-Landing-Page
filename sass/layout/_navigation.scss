@@ -1,0 +1,19 @@
+.nav {
+  &-bar {
+    display: flex;
+    list-style-type: none;
+  }
+  &-item {
+    font-size: 1.8rem;
+    font-weight: 400;
+
+    &:not(:last-child) {
+      margin-right: 8rem;
+    }
+  }
+
+  &-item__link {
+    text-decoration: none;
+    color: white;
+  }
+}

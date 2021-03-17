@@ -1,5 +1,5 @@
 :root {
-  --color-examploke: #28b485; }
+  --place-holder: 0; }
 
 @keyframes moveInLeft {
   0% {
@@ -25,10 +25,89 @@ html {
 
 body {
   box-sizing: border-box;
-  /* What this does is to change the box model so that the borders and the paddings are no longer added to the total width/height that we specify for a box */
-  padding: 3rem; }
+  /* What this does is to change the box model so that the borders and the paddings are no longer added to the total width/height that we specify for a box */ }
 
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
   line-height: 1.7; }
+
+.heading-primary {
+  font-size: 4.8rem;
+  font-weight: 600; }
+
+.heading-secondary {
+  font-size: 2.8rem;
+  font-weight: 600;
+  line-height: 3.8rem; }
+
+.paragraph {
+  text-align: justify; }
+
+.btn, .btn:link, .btn:active {
+  text-decoration: none;
+  font-size: 1.6rem;
+  border-radius: 100rem;
+  padding: 1.5rem 2rem;
+  color: white;
+  font-weight: 600; }
+
+.btn--ghost {
+  border: 2px solid white; }
+
+.btn--full {
+  background-image: linear-gradient(-9105deg, #ff4d00, #ff002e); }
+
+.header {
+  background-image: url(img/Heroimg.jpg);
+  background-size: cover;
+  height: 95vh;
+  padding: 1rem 16rem;
+  color: white;
+  display: flex;
+  flex-direction: column; }
+  .header__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+  .header__logo {
+    height: 10rem;
+    width: 10rem; }
+  .header__text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    color: white;
+    margin-bottom: 8rem; }
+    .header__text-box .heading-secondary {
+      margin-bottom: 4rem; }
+    .header__text-box__buttons > *:not(:last-child) {
+      margin-right: 3rem; }
+
+.nav-bar {
+  display: flex;
+  list-style-type: none; }
+
+.nav-item {
+  font-size: 1.8rem;
+  font-weight: 400; }
+  .nav-item:not(:last-child) {
+    margin-right: 8rem; }
+
+.nav-item__link {
+  text-decoration: none;
+  color: white; }
+
+.section-about {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .section-about__details {
+    max-width: 50rem;
+    padding: 3rem; }
+    .section-about__details .heading-tertiary {
+      font-family: "pacifico", sans-serif;
+      margin-bottom: 1.6rem; }
+    .section-about__details .heading-secondary {
+      margin-bottom: 1.6rem; }

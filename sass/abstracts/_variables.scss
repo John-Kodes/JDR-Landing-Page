@@ -1,7 +1,13 @@
-$color-primary: #02bd40;
-$color-primary-light: #7ed56f;
-$color-primary-dark: #28b485;
+$color-primary: #ff0000;
+$color-primary-light: #ff4d00;
+$color-primary-dark: #ff002e;
+
+$color-white: rgb(255, 255, 255);
 
 :root {
---color-examploke: #28b485;
+  // not working as intedend
+  //   --color-primary: 255, 0, 0;
+  //   --color-primary-light: #ff4d00;
+  //   --color-primary-dark: 255, 0, 46;
+  --place-holder: 0;
 }

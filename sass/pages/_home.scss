@@ -1,0 +1,22 @@
+.section-about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__img {
+  }
+
+  &__details {
+    max-width: 50rem;
+    padding: 3rem;
+
+    & .heading-tertiary {
+      font-family: "pacifico", sans-serif;
+      margin-bottom: 1.6rem;
+    }
+
+    & .heading-secondary {
+      margin-bottom: 1.6rem;
+    }
+  }
+}

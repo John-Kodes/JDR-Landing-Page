@@ -1,0 +1,41 @@
+.header {
+  background-image: url(img/Heroimg.jpg);
+  background-size: cover;
+  height: 95vh;
+  padding: 1rem 16rem;
+  color: $color-white;
+  display: flex;
+  flex-direction: column;
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo {
+    height: 10rem;
+    width: 10rem;
+
+    &-box {
+    }
+  }
+
+  &__text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+    color: $color-white;
+    margin-bottom: 8rem;
+    & .heading-secondary {
+      margin-bottom: 4rem;
+    }
+
+    &__buttons {
+      & > *:not(:last-child) {
+        margin-right: 3rem;
+      }
+    }
+  }
+}
