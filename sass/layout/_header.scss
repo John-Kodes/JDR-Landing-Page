@@ -6,6 +6,7 @@
   color: $color-white;
   display: flex;
   flex-direction: column;
+  background-attachment: fixed;
 
   &__nav {
     display: flex;

@@ -2,10 +2,76 @@
 display: flex;
 flex-direction: column;
 align-items: center;
+margin-top: 2rem;
+width: 100%;
 
     &__tabs {
         color: black;
         max-width: 100rem;
         width: 100%;
+        margin-bottom: 3rem;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 105rem;
+        width: 100%;
+        height: 60rem;
+        justify-content: center;
+    }
+
+    &__img{
+        height: 13rem;
+        width: 13rem;
+        border-radius: 50%;
+        margin-bottom: 1.4rem 0;
+    }
+    
+    &__img-box {
+        position: relative;
+    }
+    
+    &__card {
+        display: flex;
+        flex-direction: column;
+        max-width: 24rem;
+        width: 100%;
+        height: 28rem;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-white;
+        border-radius: 1.8rem;
+        
+        box-shadow: 0 .8rem .7rem rgba($color-black, .05);
+        
+        &:not(:nth-child(4n)) {
+            margin-right: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        &__title {
+            font-family: 'pacifico', sans-serif;
+            font-size: 2rem;
+            margin-top: 1rem;
+        }
+
+        &__description {
+            width: 80%;
+            text-align: center; 
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-top: .3rem;
+        }
+
+        &__price {
+            position: absolute;
+            height: 6rem;
+            width: 6rem;
+            background-color: red;
+            border-radius: 50%;
+        
+        }
+
     }
 }

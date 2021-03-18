@@ -69,14 +69,30 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 114px;
-  height: 33px;
-  padding: 8px;
-  background-color: #999;
+  width: 12rem;
+  height: 3.3rem;
+  padding: .8rem;
   border-radius: 100rem;
   text-decoration: none;
-  color: $color-black;
-  box-shadow: 0 .5rem 1.4rem rgba($color-black, .2);
-  
-  
+  font-weight: 600;
+  color: $color-grey-dark-1;
+  box-shadow: 0 .5rem 1.4rem rgba($color-black, .10), 0 -.5rem .8rem rgba($color-white, 1);
+  transition: all .2s;
+
+  &:not(:last-child) {
+    margin-right: 4rem;
+  }
+
+  &--active {
+    color: $color-white;
+    font-weight: 600;
+    box-shadow: 0 1rem 2rem rgba($color-black, .10), 0 -.5rem .8rem rgba($color-white, 0);
+    transform: translateY(-.5rem);
+
+    background-image: linear-gradient(
+      $shade-dir,
+      $color-primary-light,
+      $color-primary-dark
+    );
+  }
 }
