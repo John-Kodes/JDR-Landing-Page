@@ -1,0 +1,27 @@
+.delivery {
+    display: flex;
+    max-width: 105rem;
+
+    &__guide {
+        flex: 1;
+        // background-color: teal;
+        margin-right: 3rem;
+
+        &__options{
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__instructions {
+
+        }
+    }
+
+    &__map {
+        flex: 2;
+        height: 50rem;
+        background-color: tomato;
+        border-radius: 1.7rem;
+    }
+}
+

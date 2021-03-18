@@ -19,6 +19,8 @@
     <title>John Daniel's Restaurant</title>
   </head>
   <body>
+
+    <!-- //// HEADER /// -->
     <header class="header">
       <div class="header__nav">
         <div class="header__logo-box">
@@ -55,6 +57,7 @@
     </header>
 
     <main>
+    <!-- //// ABOUT /// -->
       <section class="section-about">
         <img
           src="css/img/aboutimg.jpg"
@@ -83,6 +86,7 @@
         </div>
       </section>
 
+    <!-- //// MENU /// -->
       <section class="section-menu">
         <h1 class="heading-primary--section">
           Menu
@@ -90,41 +94,20 @@
         <div class="menu">
           
           <div class="menu__tabs">
-            <a href="#" class="btn--menu-tab btn--menu-tab--active">Burgers</a>
-            <a href="#" class="btn--menu-tab">Chicken</a>
-            <a href="#" class="btn--menu-tab">Combo Meals</a>
-            <a href="#" class="btn--menu-tab">Desert</a>
-            <a href="#" class="btn--menu-tab">Drinks</a>
-            <a href="#" class="btn--menu-tab">Sides</a>
+            <button class="btn--menu-tab btn--menu-tab--active">Burgers</button>
+            <button class="btn--menu-tab">Chicken</button>
+            <button class="btn--menu-tab">Combo Meals</button>
+            <button class="btn--menu-tab">Desert</button>
+            <button class="btn--menu-tab">Drinks</button>
+            <button class="btn--menu-tab">Sides</button>
           </div>
           <div class="menu__list">
             <div class="menu__card">
               <div class="menu__card__img-box">
-                <span class="menu__card__price">&NonBreakingSpace;</span>
-              <img src="css/img/menuimg.jpg" alt="food" class="menu__img">
-              </div>
-              <div class="menu__card__title">
-                Classic
-              </div>
-              <p class="menu__card__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!
-              </p>
-            </div>
-            <div class="menu__card">
-              <div class="menu__card__img-box">
-                <span class="menu__card__price">&NonBreakingSpace;</span>
-              <img src="css/img/menuimg.jpg" alt="food" class="menu__img">
-              </div>
-              <div class="menu__card__title">
-                Classic
-              </div>
-              <p class="menu__card__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!
-              </p>
-            </div>
-            <div class="menu__card">
-              <div class="menu__card__img-box">
-                <span class="menu__card__price">&NonBreakingSpace;</span>
+                <div class="menu__card__price">
+                  <span class="menu__card__price--num">14</span>
+                  <span class="menu__card__price--cur">aed</span>
+                </div>
               <img src="css/img/menuimg.jpg" alt="food" class="menu__img">
               </div>
               <div class="menu__card__title">
@@ -137,8 +120,30 @@
           </div>
         </div>
       </section>
-      <section class="section-delivery">
 
+    <!-- //// DELIVERY /// -->
+      <section class="section-delivery">
+        <h1 class="heading-primary--section">
+          Order from home
+        </h1>
+        <div class="delivery">
+          <div class="delivery__guide">
+            <div class="delivery__guide__options">
+              <button class="btn--delivery">Talabat</button>
+              <button class="btn--delivery">Call us</button>
+              <button class="btn--delivery">Whatsapp</button>
+            </div>
+            <div class="delivery__guide__instructions">
+              <h2 class="heading-secondary">
+                Instructions
+              </h2>
+              <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste doloremque dolor debitis sed maiores, perferendis sapiente earum ducimus amet nisi, maxime inventore, aliquid vero? Commodi, aperiam, reiciendis rerum perspiciatis asperiores eaque quae ad doloremque amet, architecto ipsa? Nisi, quibusdam unde!</p>
+            </div>
+          </div>
+          <div class="delivery__map">
+            map
+          </div>
+        </div>
       </section>
     </main>
   </body>

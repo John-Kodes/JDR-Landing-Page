@@ -30,7 +30,16 @@
   align-items: center;
 
   padding: 10rem 0;
-
-
   background-color: $color-white-2;
+}
+
+.section-delivery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-image: url(img/MapBG.png);
+  background-size: cover;
+
+  padding: 10rem 0;
 }

@@ -1,3 +1,12 @@
+button {
+  border: none;
+  font: inherit;
+  color:inherit;
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
 .btn {
   &,
   &:link,
@@ -94,5 +103,31 @@
       $color-primary-light,
       $color-primary-dark
     );
+  }
+
+  &:active {
+    transform: translateY(.3rem);
+  }
+}
+
+.btn--delivery {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 15rem;
+  height: 2.9rem;
+  padding: .55rem;
+  color: $color-grey-dark-1;
+
+  border-radius: 100rem;
+  font-weight: 600;
+  box-shadow: 0 .4rem .8rem rgba($color-black, .15);
+  background-color: $color-white;
+
+  transition: all .2s;
+
+  &:not(:last-child) {
+    margin-bottom: .8rem;
   }
 }
