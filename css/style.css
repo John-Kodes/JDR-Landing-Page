@@ -25,7 +25,20 @@ html {
 
 body {
   box-sizing: border-box;
-  /* What this does is to change the box model so that the borders and the paddings are no longer added to the total width/height that we specify for a box */ }
+  /* What this does is to change the box model so that the borders and the paddings are no longer added to the total width/height that we specify for a box */
+  overflow: overlay; }
+  body::-webkit-scrollbar {
+    width: .6em; }
+  body::-webkit-scrollbar-track {
+    background-color: #333; }
+  body::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 30px;
+    box-shadow: 0 1em 0.8em black; }
+
+::selection {
+  background-color: #ff002e;
+  color: white; }
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -34,34 +47,96 @@ body {
 
 .heading-primary {
   font-size: 4.8rem;
-  font-weight: 600; }
+  font-weight: 600;
+  display: inline-block; }
+  .heading-primary--section {
+    font-size: 4.8rem;
+    font-weight: 400;
+    display: inline-block;
+    background-image: linear-gradient(-105deg, #ff4d00, #ff002e);
+    -webkit-background-clip: text;
+    color: transparent; }
 
 .heading-secondary {
   font-size: 2.8rem;
   font-weight: 600;
-  line-height: 3.8rem; }
+  line-height: 3.8rem;
+  display: inline-block; }
 
 .paragraph {
-  text-align: justify; }
+  text-align: justify;
+  font-weight: normal; }
 
-.btn, .btn:link, .btn:active {
+.btn, .btn:link, .btn:visited {
   text-decoration: none;
   font-size: 1.6rem;
   border-radius: 100rem;
   padding: 1.5rem 2rem;
-  color: white;
-  font-weight: 600; }
+  display: inline-block;
+  color: inherit;
+  font-weight: inherit;
+  cursor: pointer;
+  transition: all .2s; }
 
 .btn--ghost {
   border: 2px solid white; }
 
 .btn--full {
-  background-image: linear-gradient(-9105deg, #ff4d00, #ff002e); }
+  background-image: linear-gradient(-105deg, #ff4d00, #ff002e); }
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.3); }
+
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.5); }
+
+.btn--text {
+  text-decoration: none;
+  font-size: 1.6rem;
+  padding: 0 1rem;
+  display: inline-block;
+  color: inherit;
+  background-color: inherit;
+  cursor: pointer;
+  transition: all .3s; }
+  .btn--text:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.5); }
+  .btn--text:active {
+    transform: translateY(2px);
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.5); }
+
+.nav-bar:hover .btn--text:not(:hover) {
+  filter: brightness(0.4); }
+
+.btn--menu-tab {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 114px;
+  height: 33px;
+  padding: 8px;
+  background-color: #999;
+  border-radius: 100rem;
+  text-decoration: none;
+  color: #000;
+  box-shadow: 0 0.5rem 1.4rem rgba(0, 0, 0, 0.2); }
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .menu__tabs {
+    color: black;
+    max-width: 100rem;
+    width: 100%; }
 
 .header {
   background-image: url(img/Heroimg.jpg);
   background-size: cover;
-  height: 95vh;
+  height: 100vh;
   padding: 1rem 16rem;
   color: white;
   display: flex;
@@ -70,6 +145,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between; }
+    .header__nav-item__link {
+      font-weight: 400; }
   .header__logo {
     height: 10rem;
     width: 10rem; }
@@ -77,12 +154,18 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-start;
     height: 100%;
     color: white;
     margin-bottom: 8rem; }
+    .header__text-box .heading-primary {
+      background-image: linear-gradient(-105deg, #FFE4C3, #FFADAD);
+      -webkit-background-clip: text;
+      color: transparent; }
     .header__text-box .heading-secondary {
       margin-bottom: 4rem; }
     .header__text-box__buttons > *:not(:last-child) {
+      font-weight: 600;
       margin-right: 3rem; }
 
 .nav-bar {
@@ -108,6 +191,20 @@ body {
     padding: 3rem; }
     .section-about__details .heading-tertiary {
       font-family: "pacifico", sans-serif;
-      margin-bottom: 1.6rem; }
+      margin-bottom: 1.6rem;
+      color: #ff4d00; }
     .section-about__details .heading-secondary {
-      margin-bottom: 1.6rem; }
+      margin-bottom: 1.8rem;
+      font-weight: 700;
+      font-size: 3.2rem;
+      background-image: linear-gradient(-105deg, #ff4d00, #ff002e);
+      -webkit-background-clip: text;
+      color: transparent; }
+
+.section-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10rem 0;
+  height: 80rem;
+  background-color: #f3f0f0; }

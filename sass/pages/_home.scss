@@ -10,10 +10,27 @@
     & .heading-tertiary {
       font-family: "pacifico", sans-serif;
       margin-bottom: 1.6rem;
+
+      color: $color-primary-light;
     }
 
     & .heading-secondary {
-      margin-bottom: 1.6rem;
+      margin-bottom: 1.8rem;
+      font-weight: 700;
+      font-size: 3.2rem;
+
+      @include gradient
     }
   }
+}
+
+.section-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 10rem 0;
+  height: 80rem;
+
+  background-color: $color-white-2;
 }

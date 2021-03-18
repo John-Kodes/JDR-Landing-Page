@@ -1,0 +1,9 @@
+@mixin gradient {
+    background-image: linear-gradient(
+        $shade-dir,
+        $color-primary-light,
+        $color-primary-dark
+      );
+      -webkit-background-clip: text;
+      color:transparent;
+}

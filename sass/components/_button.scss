@@ -1,13 +1,17 @@
 .btn {
   &,
   &:link,
-  &:active {
+  &:visited {
     text-decoration: none;
     font-size: 1.6rem;
     border-radius: 100rem;
     padding: 1.5rem 2rem;
-    color: $color-white;
-    font-weight: 600;
+    display: inline-block;
+    color: inherit;
+    font-weight: inherit;
+    cursor: pointer;
+
+    transition: all .2s;
   }
 
   &--ghost {
@@ -16,9 +20,63 @@
 
   &--full {
     background-image: linear-gradient(
-      -9105deg,
+      $shade-dir,
       $color-primary-light,
       $color-primary-dark
     );
   }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 2rem 3rem rgba($color-black, .3);
+  }
+
+  &:active {
+    transform: translateY(2px);
+    box-shadow: 0 .4rem 1rem rgba($color-black, .5);
+
+  }
+}
+
+.btn--text {
+  text-decoration: none;
+  font-size: 1.6rem;
+  padding: 0 1rem;
+  display: inline-block;
+  color: inherit;
+  background-color: inherit;
+
+  cursor: pointer;
+  transition: all .3s;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 2rem 4rem rgba($color-black, .5);
+  }
+
+  &:active {
+    transform: translateY(2px);
+    box-shadow: 0 .4rem 1rem rgba($color-black, .5);
+
+  }
+}
+
+.nav-bar:hover .btn--text:not(:hover) {
+    filter: brightness(.4)
+  }
+
+.btn--menu-tab {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 114px;
+  height: 33px;
+  padding: 8px;
+  background-color: #999;
+  border-radius: 100rem;
+  text-decoration: none;
+  color: $color-black;
+  box-shadow: 0 .5rem 1.4rem rgba($color-black, .2);
+  
+  
 }

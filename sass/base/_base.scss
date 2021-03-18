@@ -16,4 +16,26 @@ html {
 
 body {
   box-sizing: border-box; /* What this does is to change the box model so that the borders and the paddings are no longer added to the total width/height that we specify for a box */
+  overflow: overlay;
+
+  &::-webkit-scrollbar {
+    width: .6em;
+
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: #333;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 30px;
+    box-shadow: 0 1em .8em rgba($color-black, 1);
+  }
+
+}
+
+::selection {
+  background-color: $color-primary-dark;
+  color: $color-white;
 }
