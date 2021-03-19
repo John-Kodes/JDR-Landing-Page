@@ -6,11 +6,21 @@ width: 100%;
 
     &__tabs {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         color: black;
         max-width: 100rem;
         width: 100%;
         margin-bottom: 3rem;
+
+        @media only screen and (max-width: 44.375em) {
+            max-width: 70rem;
+            flex-wrap: wrap;
+
+            & > * {
+                flex: 0 0 28%;
+                margin-top: 2rem;
+            }
+        }
     }
 
     &__list {
@@ -18,9 +28,39 @@ width: 100%;
         flex-wrap: wrap;
         max-width: 105rem;
         width: 100%;
-        height: 60rem;
         justify-content: center;
         align-items: center;
+
+        & > *:not(:nth-child(4n)) {
+            margin-right: 2rem;
+        }
+
+        @media only screen and (max-width: 66.25em) {
+
+            & > *:not(:nth-child(4n)) {
+                margin-right: 0;
+            }
+
+            & > *:not(:nth-child(3n)) {
+                margin-right: 2rem;
+            }
+
+            & > *:last-child {
+                margin-right: 0rem;
+            }
+        }
+
+        @media only screen and (max-width: 40em) {
+            & > *:nth-child(2n-1) {
+                margin-right: 2rem;
+            }
+
+            & > *:nth-child(2n) {
+                margin-right: 0rem;
+            }
+        }
+
+ 
     }
 
     &__img{
@@ -44,12 +84,12 @@ width: 100%;
         align-items: center;
         background-color: $color-white;
         border-radius: 1.8rem;
+        margin-bottom: 2rem;
         
         box-shadow: 0 .8rem .7rem rgba($color-black, .05);
         
-        &:not(:nth-child(4n)) {
-            margin-right: 2rem;
-            margin-bottom: 2rem;
+        @media only screen and (max-width: 28em) {
+            max-width: 18rem;
         }
 
         &__title {
@@ -98,5 +138,31 @@ width: 100%;
             }
         }
 
+    }
+
+    &__dots {
+        margin-top: 4rem;
+    }
+
+    &__dots__dot {
+        border: none;
+        background-color: #b9b9b9;
+        opacity: 0.7;
+        height: 1rem;
+        width: 1rem;
+        border-radius: 50%;
+        margin-right: 1.75rem;
+        cursor: pointer;
+        transition: all 0.5s;
+
+        &:last-child {
+            margin: 0;
+          }
+          
+        &--active {
+        background-color: $color-primary-dark;
+        opacity: 1;
+        }
+          
     }
 }

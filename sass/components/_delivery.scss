@@ -1,6 +1,7 @@
 .delivery {
     display: flex;
     max-width: 105rem;
+    padding: 2rem;
 
     &__guide {
         display: flex;
@@ -8,7 +9,6 @@
         align-items: stretch;
         flex: 1;
         margin-right: 3rem;
-        padding: 2rem;
 
         &__options{
             display: flex;
@@ -34,7 +34,6 @@
 
     &__map {
         flex: 2;
-        height: 50rem;
         border-radius: 1.7rem;
         box-shadow: 0 .4rem .8rem rgba($color-black, .15);
 

@@ -14,7 +14,7 @@ html {
   /* To combat this, we use percentages which uses the default font-size as reference. Default font-size is 16px */
 
   
-  @media only screen and (max-width: 48.75em) {
+  @media only screen and (max-width: 50em) {
     font-size: 50%;
   }
 }
