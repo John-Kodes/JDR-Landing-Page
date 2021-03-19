@@ -1,14 +1,20 @@
 .nav {
+  max-width: 40rem;
+  width: 100%;
+  margin-left: 4rem;
+  
   &-bar {
     display: flex;
     list-style-type: none;
+    justify-content: space-between;
+
   }
   &-item {
     font-size: 1.8rem;
     font-weight: 400;
 
     &:not(:last-child) {
-      margin-right: 8rem;
+      margin-right: 1rem;
     }
   }
 

@@ -22,6 +22,9 @@ html {
   font-size: 62.5%;
   /* bad practice to use pixels because doing so will override the font size setting that the user can manually change in the settings */
   /* To combat this, we use percentages which uses the default font-size as reference. Default font-size is 16px */ }
+  @media only screen and (max-width: 48.75em) {
+    html {
+      font-size: 50%; } }
 
 body {
   box-sizing: border-box;
@@ -42,7 +45,7 @@ body {
 
 body {
   font-family: "Montserrat", sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   line-height: 1.7; }
 
 .heading-primary {
@@ -124,17 +127,14 @@ button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 12rem;
+  width: 14rem;
   height: 3.3rem;
-  padding: .8rem;
   border-radius: 100rem;
   text-decoration: none;
   font-weight: 600;
   color: #646464;
   box-shadow: 0 0.5rem 1.4rem rgba(0, 0, 0, 0.1), 0 -0.5rem 0.8rem white;
   transition: all .2s; }
-  .btn--menu-tab:not(:last-child) {
-    margin-right: 4rem; }
   .btn--menu-tab--active {
     color: white;
     font-weight: 600;
@@ -189,6 +189,8 @@ button {
   align-items: center;
   width: 100%; }
   .menu__tabs {
+    display: flex;
+    justify-content: space-between;
     color: black;
     max-width: 100rem;
     width: 100%;
@@ -233,12 +235,14 @@ button {
       font-weight: 400;
       margin-top: .3rem; }
     .menu__card__price {
+      box-sizing: content-box;
       display: flex;
       flex-direction: column;
       position: absolute;
-      height: 6rem;
-      width: 6rem;
-      background-color: red;
+      height: 5rem;
+      width: 5rem;
+      background-color: #ff002e;
+      border: 0.4rem solid white;
       border-radius: 50%;
       justify-content: center;
       align-items: center;
@@ -323,7 +327,8 @@ button {
   .footer__copyright {
     position: absolute;
     bottom: 0;
-    right: 0; }
+    right: 0;
+    font-size: 1.4rem; }
 
 .header {
   background-image: url(img/Heroimg.jpg);
@@ -334,6 +339,12 @@ button {
   display: flex;
   flex-direction: column;
   background-attachment: fixed; }
+  @media only screen and (max-width: 56.25em) {
+    .header {
+      padding: 1rem 8rem; } }
+  @media only screen and (max-width: 25.625em) {
+    .header {
+      padding: 1rem 2rem; } }
   .header__nav {
     display: flex;
     align-items: center;
@@ -343,6 +354,10 @@ button {
   .header__logo {
     height: 10rem;
     width: 10rem; }
+    @media only screen and (max-width: 25.625em) {
+      .header__logo {
+        height: 7rem;
+        width: 7rem; } }
   .header__text-box {
     display: flex;
     flex-direction: column;
@@ -355,25 +370,32 @@ button {
       background-image: linear-gradient(-105deg, #FFE4C3, #FFADAD);
       -webkit-background-clip: text;
       color: transparent; }
+      @media only screen and (max-width: 48.75em) {
+        .header__text-box .heading-primary {
+          line-height: 1;
+          margin-bottom: 2rem; } }
     .header__text-box .heading-secondary {
       margin-bottom: 4rem; }
     .header__text-box__buttons > *:not(:last-child) {
       font-weight: 600;
       margin-right: 3rem; }
 
-.nav-bar {
-  display: flex;
-  list-style-type: none; }
-
-.nav-item {
-  font-size: 1.8rem;
-  font-weight: 400; }
-  .nav-item:not(:last-child) {
-    margin-right: 8rem; }
-
-.nav-item__link {
-  text-decoration: none;
-  color: white; }
+.nav {
+  max-width: 40rem;
+  width: 100%;
+  margin-left: 4rem; }
+  .nav-bar {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between; }
+  .nav-item {
+    font-size: 1.8rem;
+    font-weight: 400; }
+    .nav-item:not(:last-child) {
+      margin-right: 1rem; }
+  .nav-item__link {
+    text-decoration: none;
+    color: white; }
 
 .section-about {
   display: flex;
@@ -381,7 +403,11 @@ button {
   justify-content: center; }
   .section-about__details {
     max-width: 50rem;
+    width: 100%;
     padding: 3rem; }
+    @media only screen and (max-width: 56.25em) {
+      .section-about__details {
+        padding: 0 5rem; } }
     .section-about__details .heading-tertiary {
       font-family: "pacifico", sans-serif;
       margin-bottom: 1.6rem;
@@ -393,6 +419,9 @@ button {
       background-image: linear-gradient(-105deg, #ff4d00, #ff002e);
       -webkit-background-clip: text;
       color: transparent; }
+  .section-about__img {
+    width: 100%;
+    background-size: cover; }
 
 .section-menu {
   display: flex;

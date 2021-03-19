@@ -5,6 +5,8 @@ align-items: center;
 width: 100%;
 
     &__tabs {
+        display: flex;
+        justify-content: space-between;
         color: black;
         max-width: 100rem;
         width: 100%;
@@ -65,12 +67,14 @@ width: 100%;
         }
 
         &__price {
+            box-sizing: content-box;
             display: flex;
             flex-direction: column;
             position: absolute;
-            height: 6rem;
-            width: 6rem;
-            background-color: red;
+            height: 5rem;
+            width: 5rem;
+            background-color: $color-primary-dark;
+            border: .4rem solid rgb(255, 255, 255);
             border-radius: 50%;
             justify-content: center;
             align-items: center;

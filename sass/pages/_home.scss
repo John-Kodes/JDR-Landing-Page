@@ -5,7 +5,12 @@
 
   &__details {
     max-width: 50rem;
+    width: 100%;
     padding: 3rem;
+
+    @media only screen and (max-width: 56.25em) {
+      padding: 0 5rem;
+    }
 
     & .heading-tertiary {
       font-family: "pacifico", sans-serif;
@@ -21,6 +26,14 @@
 
       @include gradient
     }
+  }
+
+  &__img-box {
+  }
+
+  &__img {
+    width: 100%;
+    background-size: cover;
   }
 }
 

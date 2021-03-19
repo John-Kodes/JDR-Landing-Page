@@ -8,6 +8,14 @@
   flex-direction: column;
   background-attachment: fixed;
 
+  @media only screen and (max-width: 56.25em) {
+    padding: 1rem 8rem;
+  }
+
+  @media only screen and (max-width: 25.625em) {
+    padding: 1rem 2rem;
+  }
+
   &__nav {
     display: flex;
     align-items: center;
@@ -22,7 +30,9 @@
     height: 10rem;
     width: 10rem;
 
-    &-box {
+    @media only screen and (max-width: 25.625em) {
+      height: 7rem;
+      width: 7rem;
     }
   }
 
@@ -44,6 +54,12 @@
       );
       -webkit-background-clip: text;
       color:transparent;
+
+      @media only screen and (max-width: 48.75em) {
+        line-height: 1;
+        margin-bottom: 2rem;
+      }
+
     }
     
     & .heading-secondary {
