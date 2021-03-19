@@ -3,25 +3,42 @@
     max-width: 105rem;
 
     &__guide {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
         flex: 1;
-        // background-color: teal;
         margin-right: 3rem;
+        padding: 2rem;
 
         &__options{
             display: flex;
             flex-direction: column;
+            margin-bottom: 2rem;
         }
 
         &__instructions {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3rem;
+            border-radius: 1.7rem;
+            background-color: $color-white-2;
+            box-shadow: 0 .4rem .8rem rgba($color-black, .15);
 
+            & h2 {
+                margin-bottom: 2rem;
+            }
         }
     }
 
     &__map {
         flex: 2;
         height: 50rem;
-        background-color: tomato;
         border-radius: 1.7rem;
+        box-shadow: 0 .4rem .8rem rgba($color-black, .15);
+
+        background-image: linear-gradient(to bottom, rgb(65, 65, 65), rgb(31, 31, 31));
     }
 }
 

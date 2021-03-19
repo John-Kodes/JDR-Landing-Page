@@ -53,6 +53,7 @@ body {
     font-size: 4.8rem;
     font-weight: 400;
     display: inline-block;
+    margin-bottom: 3rem;
     background-image: linear-gradient(-105deg, #ff4d00, #ff002e);
     -webkit-background-clip: text;
     color: transparent; }
@@ -103,7 +104,7 @@ button {
 .btn--text {
   text-decoration: none;
   font-size: 1.6rem;
-  padding: 0 1rem;
+  padding: 0;
   display: inline-block;
   color: inherit;
   background-color: inherit;
@@ -159,12 +160,33 @@ button {
   transition: all .2s; }
   .btn--delivery:not(:last-child) {
     margin-bottom: .8rem; }
+  .btn--delivery:hover, .btn--delivery:visited {
+    transform: translateX(2rem); }
+  .btn--delivery--active {
+    background-image: linear-gradient(-105deg, #ff4d00, #ff002e);
+    color: white; }
+
+.btn--footer {
+  text-decoration: none;
+  font-size: 1.4rem;
+  padding: 0;
+  display: inline-block;
+  color: inherit;
+  background-color: inherit;
+  transform: translateY(0) rotate(0) scale(1);
+  cursor: pointer;
+  transition: all .2s; }
+  .btn--footer:hover {
+    transform: translateY(-2px) rotate(-5deg) scale(1.1);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn--footer:active {
+    transform: translateY(1px) rotate(0) scale(1);
+    box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.3); }
 
 .menu {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 2rem;
   width: 100%; }
   .menu__tabs {
     color: black;
@@ -239,16 +261,69 @@ button {
   display: flex;
   max-width: 105rem; }
   .delivery__guide {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
     flex: 1;
-    margin-right: 3rem; }
+    margin-right: 3rem;
+    padding: 2rem; }
     .delivery__guide__options {
       display: flex;
-      flex-direction: column; }
+      flex-direction: column;
+      margin-bottom: 2rem; }
+    .delivery__guide__instructions {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem;
+      border-radius: 1.7rem;
+      background-color: #FAF7F7;
+      box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15); }
+      .delivery__guide__instructions h2 {
+        margin-bottom: 2rem; }
   .delivery__map {
     flex: 2;
     height: 50rem;
-    background-color: tomato;
-    border-radius: 1.7rem; }
+    border-radius: 1.7rem;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15);
+    background-image: linear-gradient(to bottom, #414141, #1f1f1f); }
+
+.footer {
+  padding: 10rem 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2C2C2C; }
+  .footer-box {
+    display: flex;
+    position: relative;
+    max-width: 90rem;
+    width: 100%;
+    padding: 4rem 0;
+    color: white;
+    border-top: 1px solid #646464; }
+  .footer__contact-us {
+    display: flex;
+    flex-direction: column;
+    margin-right: 12rem; }
+  .footer__follow-us {
+    display: flex;
+    flex-direction: column; }
+  .footer__contact-us .heading-secondary, .footer__follow-us .heading-secondary {
+    margin-bottom: 2rem; }
+  .footer__contact-us > *:not(:first-child), .footer__follow-us > *:not(:first-child) {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: white; }
+  .footer__socials {
+    width: 8rem;
+    text-align: left; }
+  .footer__copyright {
+    position: absolute;
+    bottom: 0;
+    right: 0; }
 
 .header {
   background-image: url(img/Heroimg.jpg);
@@ -324,7 +399,7 @@ button {
   flex-direction: column;
   align-items: center;
   padding: 10rem 0;
-  background-color: #f3f0f0; }
+  background-color: #FAF7F7; }
 
 .section-delivery {
   display: flex;
@@ -333,3 +408,21 @@ button {
   background-image: url(img/MapBG.png);
   background-size: cover;
   padding: 10rem 0; }
+
+.section-gallery {
+  display: flex;
+  max-width: 153.6rem; }
+  .section-gallery__img-container {
+    flex: 1;
+    overflow: hidden;
+    box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.25); }
+  .section-gallery__img {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    filter: brightness(60%);
+    transform: scale(1.1);
+    transition: all .4s; }
+    .section-gallery__img:hover {
+      filter: brightness(100%);
+      transform: scale(1); }

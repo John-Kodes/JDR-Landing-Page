@@ -1,0 +1,53 @@
+.footer {
+    padding: 10rem 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-grey-dark-2;
+
+    &-box{
+        display: flex;
+        position: relative;
+        max-width: 90rem;
+        width: 100%;
+        padding: 4rem 0;
+        color: $color-white;
+        border-top: 1px solid $color-grey-dark-1;
+    }
+
+    &__contact-us {
+        display: flex;
+        flex-direction: column;
+        margin-right: 12rem;
+    }
+
+    &__follow-us {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__contact-us,
+    &__follow-us {
+        & .heading-secondary {
+            margin-bottom: 2rem;
+        }
+
+        & > *:not(:first-child) {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            text-decoration: none;
+            color: $color-white;
+        }
+    }
+
+    &__socials {
+        width: 8rem;
+        text-align: left;
+    }
+
+    &__copyright {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}

@@ -43,3 +43,30 @@
 
   padding: 10rem 0;
 }
+
+.section-gallery {
+  display: flex;
+  max-width: 153.6rem;
+
+  &__img-container {
+    flex: 1;
+    overflow: hidden;
+    box-shadow: 0 .4rem .8rem rgba($color-black, .25);
+
+  }
+
+  &__img {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+
+    filter: brightness(60%);
+    transform: scale(1.1);
+    transition: all .4s;
+
+    &:hover {
+      filter: brightness(100%);
+      transform: scale(1.0);
+    }
+  }
+}
