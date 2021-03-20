@@ -3,6 +3,11 @@
     max-width: 105rem;
     padding: 2rem;
 
+    @media only screen and (max-width: 41em) {
+        flex-direction: column-reverse;
+        height: 100rem;
+    }
+
     &__guide {
         display: flex;
         flex-direction: column;
@@ -10,10 +15,29 @@
         flex: 1;
         margin-right: 3rem;
 
+        @media only screen and (max-width: 41em) {
+            flex-direction: row;
+            margin: 3rem 0 0 0;
+        }
+
+        @media only screen and (max-width: 25.62em) {
+            flex-direction: column;
+            margin: 3rem 0 0 0;
+        }
+
         &__options{
             display: flex;
             flex-direction: column;
             margin-bottom: 2rem;
+
+            @media only screen and (max-width: 41em) {
+                margin-bottom: 0;
+            }
+
+            @media only screen and (max-width: 25.62em) {
+                flex-direction: column;
+                margin-bottom: 2rem;
+            }
         }
 
         &__instructions {
@@ -28,6 +52,14 @@
 
             & h2 {
                 margin-bottom: 2rem;
+            }
+
+            @media only screen and (max-width: 41em) {
+                margin-left: 3rem;
+            }
+
+            @media only screen and (max-width: 25.62em) {
+                margin-left: 0rem;
             }
         }
     }

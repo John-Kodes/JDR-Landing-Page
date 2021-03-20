@@ -22,7 +22,7 @@ html {
   font-size: 62.5%;
   /* bad practice to use pixels because doing so will override the font size setting that the user can manually change in the settings */
   /* To combat this, we use percentages which uses the default font-size as reference. Default font-size is 16px */ }
-  @media only screen and (max-width: 50em) {
+  @media only screen and (max-width: 56.25em) {
     html {
       font-size: 50%; } }
 
@@ -42,6 +42,11 @@ body {
 ::selection {
   background-color: #ff002e;
   color: white; }
+
+.hide-svg {
+  position: absolute;
+  bottom: 0;
+  z-index: -99999999999999; }
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -158,8 +163,24 @@ button {
   box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15);
   background-color: white;
   transition: all .2s; }
+  @media only screen and (max-width: 41em) {
+    .btn--delivery {
+      height: 9rem;
+      border-radius: 1.7rem; } }
+  @media only screen and (max-width: 25.62em) {
+    .btn--delivery {
+      align-self: center;
+      height: 3rem;
+      width: 60%;
+      border-radius: 17rem; } }
   .btn--delivery:not(:last-child) {
     margin-bottom: .8rem; }
+    @media only screen and (max-width: 41em) {
+      .btn--delivery:not(:last-child) {
+        margin-bottom: 3rem; } }
+    @media only screen and (max-width: 25.62em) {
+      .btn--delivery:not(:last-child) {
+        margin-bottom: 1.5rem; } }
   .btn--delivery:hover, .btn--delivery:visited {
     transform: translateX(2rem); }
   .btn--delivery--active {
@@ -202,23 +223,29 @@ button {
         .menu__tabs > * {
           flex: 0 0 28%;
           margin-top: 2rem; } }
+  .menu-box {
+    display: flex;
+    max-width: 125rem;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center; }
   .menu__list {
     display: flex;
     flex-wrap: wrap;
-    max-width: 105rem;
     width: 100%;
     justify-content: center;
-    align-items: center; }
+    align-items: center;
+    flex: 1; }
     .menu__list > *:not(:nth-child(4n)) {
       margin-right: 2rem; }
-    @media only screen and (max-width: 66.25em) {
+    @media only screen and (max-width: 72.45em) {
       .menu__list > *:not(:nth-child(4n)) {
         margin-right: 0; }
       .menu__list > *:not(:nth-child(3n)) {
         margin-right: 2rem; }
       .menu__list > *:last-child {
         margin-right: 0rem; } }
-    @media only screen and (max-width: 40em) {
+    @media only screen and (max-width: 44.95em) {
       .menu__list > *:nth-child(2n-1) {
         margin-right: 2rem; }
       .menu__list > *:nth-child(2n) {
@@ -242,7 +269,7 @@ button {
     border-radius: 1.8rem;
     margin-bottom: 2rem;
     box-shadow: 0 0.8rem 0.7rem rgba(0, 0, 0, 0.05); }
-    @media only screen and (max-width: 28em) {
+    @media only screen and (max-width: 33.25em) {
       .menu__card {
         max-width: 18rem; } }
     .menu__card__title {
@@ -281,8 +308,36 @@ button {
         font-size: 1rem;
         margin-left: 2px;
         line-height: 1; }
-  .menu__dots {
-    margin-top: 4rem; }
+  .menu__nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 4rem;
+    max-width: 100rem;
+    width: 100%; }
+    @media only screen and (min-width: 28.125em) {
+      .menu__nav {
+        justify-content: center; } }
+    .menu__nav__arrow {
+      height: 88px;
+      width: 40px;
+      z-index: 10000;
+      fill: black; }
+      .menu__nav__arrow--list {
+        height: 88px;
+        width: 40px;
+        z-index: 10000;
+        fill: black; }
+        @media only screen and (max-width: 28.125em) {
+          .menu__nav__arrow--list {
+            display: none;
+            visibility: none; } }
+      @media only screen and (min-width: 28.125em) {
+        .menu__nav__arrow {
+          display: none;
+          visibility: none; } }
+      .menu__nav__arrow--left {
+        transform: scale(-1); }
   .menu__dots__dot {
     border: none;
     background-color: #b9b9b9;
@@ -303,16 +358,35 @@ button {
   display: flex;
   max-width: 105rem;
   padding: 2rem; }
+  @media only screen and (max-width: 41em) {
+    .delivery {
+      flex-direction: column-reverse;
+      height: 100rem; } }
   .delivery__guide {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     flex: 1;
     margin-right: 3rem; }
+    @media only screen and (max-width: 41em) {
+      .delivery__guide {
+        flex-direction: row;
+        margin: 3rem 0 0 0; } }
+    @media only screen and (max-width: 25.62em) {
+      .delivery__guide {
+        flex-direction: column;
+        margin: 3rem 0 0 0; } }
     .delivery__guide__options {
       display: flex;
       flex-direction: column;
       margin-bottom: 2rem; }
+      @media only screen and (max-width: 41em) {
+        .delivery__guide__options {
+          margin-bottom: 0; } }
+      @media only screen and (max-width: 25.62em) {
+        .delivery__guide__options {
+          flex-direction: column;
+          margin-bottom: 2rem; } }
     .delivery__guide__instructions {
       flex: 1;
       display: flex;
@@ -324,6 +398,12 @@ button {
       box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15); }
       .delivery__guide__instructions h2 {
         margin-bottom: 2rem; }
+      @media only screen and (max-width: 41em) {
+        .delivery__guide__instructions {
+          margin-left: 3rem; } }
+      @media only screen and (max-width: 25.62em) {
+        .delivery__guide__instructions {
+          margin-left: 0rem; } }
   .delivery__map {
     flex: 2;
     border-radius: 1.7rem;
@@ -341,13 +421,16 @@ button {
     position: relative;
     max-width: 90rem;
     width: 100%;
-    padding: 4rem 0;
+    padding: 4rem 3rem;
     color: white;
     border-top: 1px solid #646464; }
   .footer__contact-us {
     display: flex;
     flex-direction: column;
     margin-right: 12rem; }
+    @media only screen and (max-width: 23.75em) {
+      .footer__contact-us {
+        margin-right: 6rem; } }
   .footer__follow-us {
     display: flex;
     flex-direction: column; }
@@ -364,7 +447,7 @@ button {
   .footer__copyright {
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 2rem;
     font-size: 1.4rem; }
 
 .header {
@@ -495,16 +578,23 @@ button {
   background-image: url(img/MapBG.png);
   background-size: cover;
   padding: 10rem 0; }
+  @media only screen and (max-width: 26.25em) {
+    .section-delivery .heading-primary--section {
+      font-size: 4rem; } }
 
 .section-gallery {
   display: flex;
-  max-width: 153.6rem; }
+  max-width: 153.6rem;
+  flex-wrap: wrap; }
   .section-gallery__img-container {
     flex: 1;
     overflow: hidden;
     box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.25); }
+    @media only screen and (max-width: 44.375em) {
+      .section-gallery__img-container {
+        flex: 1 0 33%; } }
   .section-gallery__img {
-    height: 100%;
+    height: auto;
     width: 100%;
     background-size: cover;
     filter: brightness(60%);

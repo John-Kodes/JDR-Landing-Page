@@ -122,8 +122,29 @@ button {
 
   transition: all .2s;
 
+  @media only screen and (max-width: 41em) {
+    height: 9rem;
+    border-radius: 1.7rem;
+  }
+
+  @media only screen and (max-width: 25.62em) {
+    align-self: center;
+    height: 3rem;
+    width: 60%;
+    border-radius: 17rem;
+  }
+
+
   &:not(:last-child) {
     margin-bottom: .8rem;
+
+    @media only screen and (max-width: 41em) {
+      margin-bottom: 3rem;
+    }
+
+    @media only screen and (max-width: 25.62em) {
+      margin-bottom: 1.5rem;
+    }
   }
 
   &:hover,

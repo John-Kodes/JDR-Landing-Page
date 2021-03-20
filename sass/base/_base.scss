@@ -14,7 +14,7 @@ html {
   /* To combat this, we use percentages which uses the default font-size as reference. Default font-size is 16px */
 
   
-  @media only screen and (max-width: 50em) {
+  @media only screen and (max-width: 56.25em) {
     font-size: 50%;
   }
 }
@@ -44,3 +44,9 @@ body {
   color: $color-white;
 }
 
+.hide-svg {
+  // background-color: $color-grey-dark-2;
+  position: absolute;
+  bottom: 0;
+  z-index: -99999999999999;
+}

@@ -80,21 +80,31 @@
   background-size: cover;
 
   padding: 10rem 0;
+
+  & .heading-primary--section {
+    @media only screen and (max-width: 26.25em) {
+      font-size: 4rem;
+    }
+  }
 }
 
 .section-gallery {
   display: flex;
   max-width: 153.6rem;
+  flex-wrap: wrap;
 
   &__img-container {
     flex: 1;
     overflow: hidden;
     box-shadow: 0 .4rem .8rem rgba($color-black, .25);
 
+    @media only screen and (max-width: 44.375em) {
+      flex: 1 0 33%;
+    }
   }
 
   &__img {
-    height: 100%;
+    height: auto;
     width: 100%;
     background-size: cover;
 

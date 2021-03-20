@@ -23,19 +23,27 @@ width: 100%;
         }
     }
 
+    &-box {
+        display: flex;
+        max-width: 125rem;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     &__list {
         display: flex;
         flex-wrap: wrap;
-        max-width: 105rem;
         width: 100%;
         justify-content: center;
         align-items: center;
+        flex: 1;
 
         & > *:not(:nth-child(4n)) {
             margin-right: 2rem;
         }
 
-        @media only screen and (max-width: 66.25em) {
+        @media only screen and (max-width: 72.45em) {
 
             & > *:not(:nth-child(4n)) {
                 margin-right: 0;
@@ -50,7 +58,7 @@ width: 100%;
             }
         }
 
-        @media only screen and (max-width: 40em) {
+        @media only screen and (max-width: 44.95em) {
             & > *:nth-child(2n-1) {
                 margin-right: 2rem;
             }
@@ -59,8 +67,6 @@ width: 100%;
                 margin-right: 0rem;
             }
         }
-
- 
     }
 
     &__img{
@@ -88,7 +94,7 @@ width: 100%;
         
         box-shadow: 0 .8rem .7rem rgba($color-black, .05);
         
-        @media only screen and (max-width: 28em) {
+        @media only screen and (max-width: 33.25em) {
             max-width: 18rem;
         }
 
@@ -140,8 +146,52 @@ width: 100%;
 
     }
 
-    &__dots {
+
+
+    &__nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
         margin-top: 4rem;
+        max-width: 100rem;
+        width: 100%;
+
+        @media only screen and (min-width: 28.125em) {
+            justify-content: center;
+
+        }
+
+        &__arrow {
+
+            &--list {
+                height: 88px;
+                width: 40px;
+                z-index: 10000;
+                fill: black;
+
+                @media only screen and (max-width: 28.125em) {
+                    display: none;
+                    visibility: none;
+                }
+            }
+
+            height: 88px;
+            width: 40px;
+            z-index: 10000;
+            fill: black;
+            
+            @media only screen and (min-width: 28.125em) {
+                display: none;
+                visibility: none;
+            }
+
+            &--left{
+                transform: scale(-1);
+            }
+            
+            &--right {
+            }
+        }
     }
 
     &__dots__dot {
@@ -163,6 +213,5 @@ width: 100%;
         background-color: $color-primary-dark;
         opacity: 1;
         }
-          
     }
 }

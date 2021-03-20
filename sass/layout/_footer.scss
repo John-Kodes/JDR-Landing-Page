@@ -10,7 +10,7 @@
         position: relative;
         max-width: 90rem;
         width: 100%;
-        padding: 4rem 0;
+        padding: 4rem 3rem;
         color: $color-white;
         border-top: 1px solid $color-grey-dark-1;
     }
@@ -19,6 +19,10 @@
         display: flex;
         flex-direction: column;
         margin-right: 12rem;
+
+        @media only screen and (max-width: 23.75em) {
+        margin-right: 6rem;
+        }
     }
 
     &__follow-us {
@@ -48,7 +52,7 @@
     &__copyright {
         position: absolute;
         bottom: 0;
-        right: 0;
+        right: 2rem;
         font-size: 1.4rem;
     }
 }
