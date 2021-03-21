@@ -1,5 +1,5 @@
 :root {
-  --place-holder: 0; }
+  --open-close: #00ff00; }
 
 @keyframes moveInLeft {
   0% {
@@ -82,7 +82,8 @@ button {
   color: inherit;
   background: none;
   outline: none;
-  cursor: pointer; }
+  cursor: pointer;
+  user-select: none; }
 
 .btn, .btn:link, .btn:visited {
   text-decoration: none;
@@ -149,6 +150,18 @@ button {
   .btn--menu-tab:active {
     transform: translateY(0.3rem); }
 
+.btn__nav {
+  transition: all .2s;
+  transform: translateY(0) scale(1); }
+  .btn__nav--right:hover {
+    transform: translateY(-0.5rem) scale(1.05); }
+  .btn__nav--left:hover {
+    transform: translateY(-0.5rem) scale(-1.05); }
+  .btn__nav--right:active {
+    transform: translateY(0) scale(1); }
+  .btn__nav--left:active {
+    transform: translateY(0) scale(-1); }
+
 .btn--delivery {
   display: inline-flex;
   justify-content: center;
@@ -162,7 +175,8 @@ button {
   font-weight: 600;
   box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15);
   background-color: white;
-  transition: all .2s; }
+  transition: all .2s;
+  user-select: none; }
   @media only screen and (max-width: 41em) {
     .btn--delivery {
       height: 9rem;
@@ -461,10 +475,13 @@ button {
   background-attachment: fixed; }
   @media only screen and (max-width: 58.75em) {
     .header {
-      padding: 1rem 8rem; } }
+      padding: 2rem 8rem; } }
+  @media only screen and (max-width: 28.125em) {
+    .header {
+      padding: 4rem 4rem; } }
   @media only screen and (max-width: 25.625em) {
     .header {
-      padding: 1rem 2rem; } }
+      padding: 2rem 2rem; } }
   .header__nav {
     display: flex;
     align-items: center;
@@ -484,8 +501,7 @@ button {
     justify-content: center;
     align-items: flex-start;
     height: 100%;
-    color: white;
-    margin-bottom: 8rem; }
+    color: white; }
     .header__text-box .heading-primary {
       background-image: linear-gradient(-105deg, #FFE4C3, #FFADAD);
       -webkit-background-clip: text;
@@ -499,6 +515,21 @@ button {
     .header__text-box__buttons > *:not(:last-child) {
       font-weight: 600;
       margin-right: 3rem; }
+    .header__text-box__schedule {
+      display: flex;
+      align-items: center;
+      margin-top: 2rem;
+      font-size: 1.4rem;
+      padding: 1rem;
+      border-radius: 1.7rem;
+      background-color: rgba(0, 0, 0, 0.3); }
+      .header__text-box__schedule::before {
+        content: "";
+        height: 85%;
+        width: .5rem;
+        background-color: var(--open-close);
+        border-radius: 17rem;
+        margin-right: 1rem; }
 
 .nav {
   max-width: 40rem;
@@ -598,8 +629,8 @@ button {
     width: 100%;
     background-size: cover;
     filter: brightness(60%);
-    transform: scale(1.1);
+    transform: scale(1.2);
     transition: all .4s; }
     .section-gallery__img:hover {
       filter: brightness(100%);
-      transform: scale(1); }
+      transform: scale(1.1); }

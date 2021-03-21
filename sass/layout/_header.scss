@@ -9,11 +9,15 @@
   background-attachment: fixed;
 
   @media only screen and (max-width: 58.75em) {
-    padding: 1rem 8rem;
+    padding: 2rem 8rem;
+  }
+
+  @media only screen and (max-width: 28.125em) {
+    padding: 4rem 4rem;
   }
 
   @media only screen and (max-width: 25.625em) {
-    padding: 1rem 2rem;
+    padding: 2rem 2rem;
   }
 
   &__nav {
@@ -44,7 +48,6 @@
     height: 100%;
 
     color: $color-white;
-    margin-bottom: 8rem;
 
     & .heading-primary {
       background-image: linear-gradient(
@@ -72,6 +75,25 @@
       & > *:not(:last-child) {
        font-weight: 600;
         margin-right: 3rem;
+      }
+    }
+
+    &__schedule {
+      display: flex;
+      align-items: center;
+      margin-top: 2rem;
+      font-size: 1.4rem;
+      padding: 1rem;
+      border-radius: 1.7rem;
+      background-color: rgba($color-black, .3);
+
+      &::before {
+        content: "";
+        height: 85%;
+        width: .5rem;
+        background-color: var(--open-close);
+        border-radius: 17rem;
+        margin-right: 1rem;
       }
     }
   }

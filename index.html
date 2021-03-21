@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
       rel="stylesheet"
     />
+    <script defer src="./js/controller.js"></script>
     <title>John Daniel's Restaurant</title>
   </head>
   <body>
@@ -52,6 +53,9 @@
         <div class="header__text-box__buttons">
           <a href="#" class="btn btn--full">View Menu</a>
           <a href="#" class="btn btn--ghost">Order from home</a>
+        </div>
+        <div class="header__text-box__schedule">
+            Opening times<br/>Sun - Thur : 10AM - 12AM<br/>Fri - Sat : 10AM - 2AM 
         </div>
       </div>
     </header>
@@ -105,7 +109,7 @@
             <button class="btn--menu-tab">Sides</button>
           </div>
           <div class="menu-box">
-            <svg class="menu__nav__arrow--list menu__nav__arrow--left">
+            <svg class="btn__nav menu__nav__arrow--list menu__nav__arrow--left btn__nav--left">
               <use xlink:href="#arrow"></use>
             </svg>
             <div class="menu__list">
@@ -231,14 +235,14 @@
               </div>
 
             </div>
-            <svg class="menu__nav__arrow--list menu__nav__arrow--right">
+            <svg class="btn__nav menu__nav__arrow--list menu__nav__arrow--right btn__nav--right">
               <use xlink:href="#arrow"></use>
             </svg>
           </div>
           
         </div>
         <div class="menu__nav">
-          <svg class="menu__nav__arrow menu__nav__arrow--left">
+          <svg class="btn__nav menu__nav__arrow menu__nav__arrow--left btn__nav--left">
             <use xlink:href="#arrow"></use>
           </svg>
           <div class="menu__dots">
@@ -249,7 +253,7 @@
             <button class="menu__dots__dot"></button>
             <button class="menu__dots__dot"></button>
           </div>
-          <svg class="menu__nav__arrow menu__nav__arrow--right">
+          <svg class="btn__nav menu__nav__arrow menu__nav__arrow--right btn__nav--right">
             <use xlink:href="#arrow"></use>
           </svg>
         </div>

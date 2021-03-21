@@ -109,12 +109,12 @@
     background-size: cover;
 
     filter: brightness(60%);
-    transform: scale(1.1);
+    transform: scale(1.2);
     transition: all .4s;
 
     &:hover {
       filter: brightness(100%);
-      transform: scale(1.0);
+      transform: scale(1.1);
     }
   }
 }

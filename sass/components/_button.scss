@@ -5,6 +5,7 @@ button {
   background: none;
   outline: none;
   cursor: pointer;
+  user-select: none;
 }
 
 .btn {
@@ -105,6 +106,29 @@ button {
   }
 }
 
+.btn__nav {
+  transition: all .2s ;
+  transform: translateY(0) scale(1);
+
+  &--right:hover {
+    transform: translateY(-.5rem) scale(1.05);
+  }
+
+  &--left:hover {
+    transform: translateY(-.5rem) scale(-1.05);
+  }
+
+  &--right:active {
+    transform: translateY(0) scale(1);
+  }
+
+  &--left:active {
+    transform: translateY(0) scale(-1);
+  }
+}
+
+
+
 .btn--delivery {
   display: inline-flex;
   justify-content: center;
@@ -121,6 +145,8 @@ button {
   background-color: $color-white;
 
   transition: all .2s;
+
+  user-select: none;
 
   @media only screen and (max-width: 41em) {
     height: 9rem;
