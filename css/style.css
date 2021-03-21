@@ -264,6 +264,9 @@ button {
         margin-right: 2rem; }
       .menu__list > *:nth-child(2n) {
         margin-right: 0rem; } }
+    @media only screen and (max-width: 21.5em) {
+      .menu__list > *:nth-child(2n-1) {
+        margin-right: 0rem; } }
   .menu__img {
     height: 13rem;
     width: 13rem;
@@ -286,6 +289,9 @@ button {
     @media only screen and (max-width: 33.25em) {
       .menu__card {
         max-width: 18rem; } }
+    @media only screen and (max-width: 21.5em) {
+      .menu__card {
+        max-width: 80%; } }
     .menu__card__title {
       font-family: 'pacifico', sans-serif;
       font-size: 2rem;
@@ -512,24 +518,28 @@ button {
           margin-bottom: 2rem; } }
     .header__text-box .heading-secondary {
       margin-bottom: 4rem; }
-    .header__text-box__buttons > *:not(:last-child) {
-      font-weight: 600;
-      margin-right: 3rem; }
+    .header__text-box__buttons {
+      display: flex;
+      justify-content: space-between;
+      max-width: 35rem;
+      width: 100%; }
     .header__text-box__schedule {
       display: flex;
       align-items: center;
-      margin-top: 2rem;
+      margin-top: 4rem;
       font-size: 1.4rem;
-      padding: 1rem;
+      padding: 1rem 1rem 1rem 2.4rem;
       border-radius: 1.7rem;
-      background-color: rgba(0, 0, 0, 0.3); }
+      background-color: rgba(0, 0, 0, 0.3);
+      position: relative; }
       .header__text-box__schedule::before {
         content: "";
-        height: 85%;
+        position: absolute;
+        height: 70%;
         width: .5rem;
         background-color: var(--open-close);
         border-radius: 17rem;
-        margin-right: 1rem; }
+        left: 1rem; }
 
 .nav {
   max-width: 40rem;

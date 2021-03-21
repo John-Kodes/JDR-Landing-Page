@@ -67,6 +67,13 @@ width: 100%;
                 margin-right: 0rem;
             }
         }
+
+        @media only screen and (max-width: 21.5em) {
+
+            & > *:nth-child(2n-1) {
+                margin-right: 0rem;
+            }
+        }
     }
 
     &__img{
@@ -96,6 +103,10 @@ width: 100%;
         
         @media only screen and (max-width: 33.25em) {
             max-width: 18rem;
+        }
+
+        @media only screen and (max-width: 21.5em) {
+            max-width: 80%;
         }
 
         &__title {

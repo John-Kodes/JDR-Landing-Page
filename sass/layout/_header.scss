@@ -71,29 +71,31 @@
     }
 
     &__buttons {
-      
-      & > *:not(:last-child) {
-       font-weight: 600;
-        margin-right: 3rem;
-      }
+      display: flex;
+      justify-content: space-between;
+      max-width: 35rem;
+      width: 100%;
     }
 
     &__schedule {
       display: flex;
       align-items: center;
-      margin-top: 2rem;
+      margin-top: 4rem;
       font-size: 1.4rem;
-      padding: 1rem;
+      padding: 1rem 1rem 1rem 2.4rem;
       border-radius: 1.7rem;
       background-color: rgba($color-black, .3);
+      position: relative;
 
       &::before {
         content: "";
-        height: 85%;
+        position: absolute;
+        height: 70%;
         width: .5rem;
         background-color: var(--open-close);
         border-radius: 17rem;
-        margin-right: 1rem;
+
+        left: 1rem;
       }
     }
   }
