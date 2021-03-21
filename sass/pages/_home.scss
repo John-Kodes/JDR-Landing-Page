@@ -69,7 +69,24 @@
 
   padding: 10rem 2rem;
   background-color: $color-white-2;
+
+  & .heading-primary--section {
+    margin-bottom: 0rem;
+  }
+
+  &__disclaimer {
+    margin-bottom: 3rem;
+    text-align: center;
+    font-weight: 600;
+    color: $color-grey-dark-1;
+    
+    & span {
+      color: $color-primary-dark;
+      font-size: 2rem;
+    }
+  }
 }
+
 
 .section-delivery {
   display: flex;

@@ -81,12 +81,21 @@ button {
   align-items: center;
   width: 14rem;
   height: 3.3rem;
-  border-radius: 100rem;
+  padding: 1rem 0rem;
+  border-radius: 1.7rem;
   text-decoration: none;
   font-weight: 600;
   color: $color-grey-dark-1;
   box-shadow: 0 .5rem 1.4rem rgba($color-black, .10), 0 -.5rem .8rem rgba($color-white, 1);
   transition: all .2s;
+
+  @media only screen and (max-width:44.38em) {
+    padding: 3rem 1rem;
+  }
+
+  @media only screen and (max-width:26.56em) {
+    padding: 3rem 1rem;
+  }
 
   &--active {
     color: $color-white;
@@ -208,6 +217,5 @@ button {
   &:active {
     transform: translateY(1px) rotate(0) scale(1);
     box-shadow: 0 .2rem .5rem rgba($color-black, .3);
-
   }
 }

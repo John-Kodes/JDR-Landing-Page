@@ -135,12 +135,19 @@ button {
   align-items: center;
   width: 14rem;
   height: 3.3rem;
-  border-radius: 100rem;
+  padding: 1rem 0rem;
+  border-radius: 1.7rem;
   text-decoration: none;
   font-weight: 600;
   color: #646464;
   box-shadow: 0 0.5rem 1.4rem rgba(0, 0, 0, 0.1), 0 -0.5rem 0.8rem white;
   transition: all .2s; }
+  @media only screen and (max-width: 44.38em) {
+    .btn--menu-tab {
+      padding: 3rem 1rem; } }
+  @media only screen and (max-width: 26.56em) {
+    .btn--menu-tab {
+      padding: 3rem 1rem; } }
   .btn--menu-tab--active {
     color: white;
     font-weight: 600;
@@ -230,7 +237,7 @@ button {
     max-width: 100rem;
     width: 100%;
     margin-bottom: 3rem; }
-    @media only screen and (max-width: 44.375em) {
+    @media only screen and (max-width: 44.38em) {
       .menu__tabs {
         max-width: 70rem;
         flex-wrap: wrap; }
@@ -611,6 +618,16 @@ button {
   align-items: center;
   padding: 10rem 2rem;
   background-color: #FAF7F7; }
+  .section-menu .heading-primary--section {
+    margin-bottom: 0rem; }
+  .section-menu__disclaimer {
+    margin-bottom: 3rem;
+    text-align: center;
+    font-weight: 600;
+    color: #646464; }
+    .section-menu__disclaimer span {
+      color: #ff002e;
+      font-size: 2rem; }
 
 .section-delivery {
   display: flex;

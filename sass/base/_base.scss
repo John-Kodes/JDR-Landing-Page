@@ -23,6 +23,7 @@ body {
   box-sizing: border-box; /* What this does is to change the box model so that the borders and the paddings are no longer added to the total width/height that we specify for a box */
   overflow: overlay;
 
+  // scrollbar
   &::-webkit-scrollbar {
     width: .6em;
 
