@@ -1,3 +1,3 @@
 export const test = function() {
-    console.log('hello world');
+    console.log('just making sure');
 }
