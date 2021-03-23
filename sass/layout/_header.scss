@@ -25,6 +25,7 @@
     align-items: center;
     justify-content: space-between;
 
+
     &-item__link {
       font-weight: 400;
     }
@@ -84,8 +85,12 @@
       font-size: 1.4rem;
       padding: 1rem 1rem 1rem 2.4rem;
       border-radius: 1.7rem;
-      background-color: rgba($color-black, .3);
+      background-color: rgba($color-black, .4);
       position: relative;
+
+      & span {
+        font-weight: 600;
+      }
 
       &::before {
         content: "";

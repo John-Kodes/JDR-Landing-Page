@@ -63,15 +63,9 @@ button {
     transform: translateY(-5px);
     box-shadow: 0 2rem 4rem rgba($color-black, .5);
   }
-
-  &:active {
-    transform: translateY(2px);
-    box-shadow: 0 .4rem 1rem rgba($color-black, .5);
-
-  }
 }
 
-.nav-bar:hover .btn--text:not(:hover) {
+  .nav-bar:hover .btn--text:not(:hover) {
     filter: brightness(.4)
   }
 

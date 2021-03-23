@@ -37,7 +37,7 @@ body {
   body::-webkit-scrollbar-thumb {
     background-color: #555;
     border-radius: 30px;
-    box-shadow: 0 1em 0.8em black; }
+    box-shadow: 0 1em 0.8em rgba(0, 0, 0, 0.5); }
 
 ::selection {
   background-color: #ff002e;
@@ -122,9 +122,6 @@ button {
   .btn--text:hover {
     transform: translateY(-5px);
     box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.5); }
-  .btn--text:active {
-    transform: translateY(2px);
-    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.5); }
 
 .nav-bar:hover .btn--text:not(:hover) {
   filter: brightness(0.4); }
@@ -338,13 +335,18 @@ button {
   .menu__nav {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
     margin-top: 4rem;
     max-width: 100rem;
     width: 100%; }
     @media only screen and (min-width: 28.125em) {
       .menu__nav {
         justify-content: center; } }
+    .menu__nav::after {
+      content: '';
+      width: 40%;
+      border-bottom: 0.4rem solid #ebe6e7;
+      border-radius: 10rem; }
     .menu__nav__arrow {
       height: 88px;
       width: 40px;
@@ -537,8 +539,10 @@ button {
       font-size: 1.4rem;
       padding: 1rem 1rem 1rem 2.4rem;
       border-radius: 1.7rem;
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: rgba(0, 0, 0, 0.4);
       position: relative; }
+      .header__text-box__schedule span {
+        font-weight: 600; }
       .header__text-box__schedule::before {
         content: "";
         position: absolute;

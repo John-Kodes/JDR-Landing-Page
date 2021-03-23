@@ -24,7 +24,7 @@
   <body>
 
     <!-- //// HEADER /// -->
-    <header class="header">
+    <header class="header" id="header">
       <div class="header__nav">
         <div class="header__logo-box">
           <img
@@ -36,13 +36,13 @@
         <nav class="nav">
           <ul class="nav-bar">
             <li class="nav-item">
-              <a href="#" class="nav-item__link btn--text">About</a>
+              <button class="nav-item__link btn--text btn-to-about">About</button>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-item__link btn--text">Menu</a>
+              <button class="nav-item__link btn--text btn-to-menu">Menu</button>
             </li>
             <li class="nav-item">
-              <a href="#" class="nav-item__link btn--text">Delivery</a>
+              <button class="nav-item__link btn--text btn-to-delivery">Delivery</button>
             </li>
           </ul>
         </nav>
@@ -53,18 +53,20 @@
           Premium Burgers &<br />Crispy Broasted Chicken
         </h2>
         <div class="header__text-box__buttons">
-          <a href="#" class="btn btn--full">View Menu</a>
-          <a href="#" class="btn btn--ghost">Order from home</a>
+          <a href="#" class="btn btn--full btn-to-menu">View Menu</a>
+          <a href="#" class="btn btn--ghost btn-to-delivery">Order from home</a>
         </div>
         <div class="header__text-box__schedule">
-            Opening times<br/>Sun - Thur : 10AM - 12AM<br/>Fri - Sat : 10AM - 2AM 
+          <p class="paragraph">
+            Opening times<br/><span>Sat - Mon :</span> 10AM - 11AM<br/><span>Tue - Fri :</span> 10AM - 11:59PM
+          </p>
         </div>
       </div>
     </header>
 
     <main>
     <!-- //// ABOUT /// -->
-      <section class="section-about">
+      <section class="section-about" id="section-about">
         <div class="section-about__img-box">
           <img
           src="css/img/aboutimg.jpg"
@@ -96,7 +98,7 @@
       </section>
 
     <!-- //// MENU /// -->
-      <section class="section-menu">
+      <section class="section-menu" id="section-menu">
         <h1 class="heading-primary--section">
           Menu
         </h1>
@@ -125,7 +127,7 @@
                     <span class="menu__card__price--num">14</span>
                     <span class="menu__card__price--cur">aed</span>
                   </div>
-                <img src="css/img/menuimg.jpg" alt="food" class="menu__img">
+                  <img src="css/img/menuimg.jpg" alt="food" class="menu__img">
                 </div>
                 <div class="menu__card__title">
                   Classic
@@ -251,14 +253,7 @@
           <svg class="btn__nav menu__nav__arrow menu__nav__arrow--left btn__nav--left">
             <use xlink:href="#arrow"></use>
           </svg>
-          <div class="menu__dots">
-            <button class="menu__dots__dot menu__dots__dot--active"></button>
-            <button class="menu__dots__dot"></button>
-            <button class="menu__dots__dot"></button>
-            <button class="menu__dots__dot"></button>
-            <button class="menu__dots__dot"></button>
-            <button class="menu__dots__dot"></button>
-          </div>
+
           <svg class="btn__nav menu__nav__arrow menu__nav__arrow--right btn__nav--right">
             <use xlink:href="#arrow"></use>
           </svg>
@@ -266,7 +261,7 @@
       </section>
 
     <!-- //// DELIVERY /// -->
-      <section class="section-delivery">
+      <section class="section-delivery" id="section-delivery">
         <h1 class="heading-primary--section">
           Order from home
         </h1>
@@ -291,7 +286,7 @@
       </section>
 
     <!-- //// GALLERY /// -->
-      <section class="section-gallery">
+      <section class="section-gallery" id="section-gallery">
         <div class="section-gallery__img-container">
           <img src="css/img/Galleryimg.jpg" alt="Instagram Photo" class="section-gallery__img">
         </div>
@@ -310,21 +305,21 @@
       </section>
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="footer">
       <div class="footer-box">
         <div class="footer__contact-us">
           <h2 class="heading-secondary">
             Contact Us
           </h2>
           <span class="phone">+971 56 834 2349</span>
-          <a href="#" class="btn--footer-text">business@email.com</a>
+          <span class="btn--footer-text">business@email.com</span>
         </div>
         <div class="footer__follow-us">
           <h2 class="heading-secondary">
             Follow Us
           </h2>
-          <a href="#" class="footer__socials btn--footer">Facebook</a>
-          <a href="#" class="footer__socials btn--footer">Instagram</a>
+          <a href="https://www.facebook.com/johndanielsuae/" class="footer__socials btn--footer" target="_blank">Facebook</a>
+          <a href="https://www.instagram.com/johndanielsuae/" class="footer__socials btn--footer" target="_blank">Instagram</a>
         </div>
         <div class="footer__copyright">
           @2021 All rights reserved.
