@@ -203,6 +203,7 @@ button {
     transform: translateX(2rem); }
   .btn--delivery--active {
     background-image: linear-gradient(-105deg, #ff4d00, #ff002e);
+    transform: translateX(2rem);
     color: white; }
 
 .btn--footer {
@@ -248,7 +249,8 @@ button {
     justify-content: space-between;
     align-items: center; }
   .menu__list {
-    display: flex;
+    display: none;
+    visibility: hidden;
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
@@ -256,21 +258,32 @@ button {
     flex: 1; }
     .menu__list > *:not(:nth-child(4n)) {
       margin-right: 2rem; }
-    @media only screen and (max-width: 72.45em) {
+    .menu__list > *:last-child {
+      margin-right: 0; }
+    .menu__list--active {
+      display: flex;
+      visibility: visible; }
+    @media only screen and (max-width: 74.1em) {
       .menu__list > *:not(:nth-child(4n)) {
         margin-right: 0; }
       .menu__list > *:not(:nth-child(3n)) {
         margin-right: 2rem; }
       .menu__list > *:last-child {
-        margin-right: 0rem; } }
+        margin-right: 0rem; }
+      .menu__list > *:last-child {
+        margin-right: 0; } }
     @media only screen and (max-width: 44.95em) {
       .menu__list > *:nth-child(2n-1) {
         margin-right: 2rem; }
       .menu__list > *:nth-child(2n) {
-        margin-right: 0rem; } }
+        margin-right: 0rem; }
+      .menu__list > *:last-child {
+        margin-right: 0; } }
     @media only screen and (max-width: 21.5em) {
       .menu__list > *:nth-child(2n-1) {
-        margin-right: 0rem; } }
+        margin-right: 0rem; }
+      .menu__list > *:last-child {
+        margin-right: 0; } }
   .menu__img {
     height: 13rem;
     width: 13rem;
@@ -433,6 +446,12 @@ button {
       @media only screen and (max-width: 25.62em) {
         .delivery__guide__instructions {
           margin-left: 0rem; } }
+  .delivery__paragraph {
+    display: none;
+    visibility: hidden; }
+    .delivery__paragraph--active {
+      display: block;
+      visibility: visible; }
   .delivery__map {
     flex: 2;
     border-radius: 1.7rem;

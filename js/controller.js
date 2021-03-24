@@ -2,6 +2,129 @@
 
 //// VARIABLES ////
 
+// ------FOOD OBJECTS------
+
+//// Beef burgers
+const classic = {
+    category: 'beef burgers',
+    name: 'Classic',
+    price: '14',
+    img: "css/img/menuimg.jpg",
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!'
+}
+
+const arabish = {
+    category: 'beef burgers',
+    name: 'Arabish',
+    price: '14',
+    img: "css/img/menuimg.jpg",
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!'
+}
+
+const breakfast = {
+    category: 'beef burgers',
+    name: 'Breakfast',
+    price: '16',
+    img: "css/img/menuimg.jpg",
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!'
+}
+
+const kilobite = {
+    category: 'beef burgers',
+    name: 'Kilobite',
+    price: '16',
+    img: "css/img/menuimg.jpg",
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!'
+}
+
+const megabite = {
+    category: 'beef burgers',
+    name: 'Megabite',
+    price: '27',
+    img: "css/img/menuimg.jpg",
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!'
+}
+
+const gigabite = {
+    category: 'beef burgers',
+    name: 'Gigabite',
+    price: '36',
+    img: "css/img/menuimg.jpg",
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!'
+}
+
+const terabite = {
+    category: 'beef burgers',
+    name: 'Terabite',
+    price: '47',
+    img: "css/img/menuimg.jpg",
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!'
+}
+
+//// Chicken burgers
+
+// same thing
+
+//// Value Meals
+
+const vm1 = {
+    category: 'value meals',
+    name: 'VM 1',
+    price: '27',
+    img: "css/img/menuimg.jpg",
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!'
+}
+
+const vm2 = {
+    category: 'value meals',
+    name: 'VM 2',
+    price: '31',
+    img: "css/img/menuimg.jpg",
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!'
+}
+
+const vm3 = {
+    category: 'value meals',
+    name: 'VM 3',
+    price: '27',
+    img: "css/img/menuimg.jpg",
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!'
+}
+
+const vm4 = {
+    category: 'value meals',
+    name: 'VM 4',
+    price: '25',
+    img: "css/img/menuimg.jpg",
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!'
+}
+
+const vm5 = {
+    category: 'value meals',
+    name: 'VM 5',
+    price: '25',
+    img: "css/img/menuimg.jpg",
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!'
+}
+
+const vm6 = {
+    category: 'value meals',
+    name: 'VM 6',
+    price: '31',
+    img: "css/img/menuimg.jpg",
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!'
+}
+
+//// Desert
+
+//// Drinks
+
+//// Sides
+
+const menu = [classic, arabish, breakfast, kilobite, megabite, gigabite, terabite, vm1, vm2, vm3, vm4, vm5, vm6]
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+
 // --Storing section IDs--
 
 const sectionAbout = document.querySelector('#section-about');
@@ -10,35 +133,26 @@ const sectionDelivery = document.querySelector('#section-delivery');
 
 // --Containers--
 
-const menuContainer = document.querySelector('.menu__list')
+const menuListSlides = document.querySelectorAll('.menu__list')
+const menuTabsContainer = document.querySelector('.menu__tabs')
 
-// --Food Objects--
-
-const menuClassic = {
-    category: 'Beef Burgers',
-    name: 'This is new',
-    price: '14',
-    img: "css/img/menuimg.jpg",
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!'
-}
-
-const menuClassic2 = {
-    category: 'Beef Burgers',
-    name: 'Also new',
-    price: '14',
-    img: "css/img/menuimg.jpg",
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!'
-}
-
-const menu = [menuClassic, menuClassic2]
+const deliveryTabsContainer = document.querySelector('.delivery__guide__options')
+const deliveryTabsContent = document.querySelectorAll('.delivery__paragraph')
 
 //// BUTTONS ////
 
 // --Header--
-
 const btnToAbout = document.querySelectorAll('.btn-to-about');
 const btnToMenu = document.querySelectorAll('.btn-to-menu');
 const btnToDelivery = document.querySelectorAll('.btn-to-delivery');
+
+// --Menu--
+const btnMenuTabs = document.querySelectorAll('.btn--menu-tab')
+const btnLeft = document.querySelectorAll('.btn__nav--left')
+const btnRight = document.querySelectorAll('.btn__nav--right')
+
+// --Delivery--
+const btnDeliveryTabs = document.querySelectorAll('.btn--delivery');
 
 // --pairing buttons with section IDs
 
@@ -62,12 +176,12 @@ const curTime = {
     weekDay,
     hours,
     min,
-    sec,
 }
 const restaurantSchedule = {
-    weekEnd: [0, 1, 6],
+    weekDay: [0, 1, 6],
     openAt: 10,
     closeAt: 23,
+    closeMin: 59,
 }
 
 //// Used to get user's current time and updates it
@@ -75,34 +189,32 @@ const getCurrentTime = function () {
     curTime.date = new Date();
     curTime.weekDay = curTime.date.getDay();
     curTime.hours = curTime.date.getHours();
-    curTime.min = curTime.date.getMinutes();
-    curTime.sec = curTime.date.getSeconds();
+    curTime.min = curTime.date.getMinutes();;
 }
 
 
 //// Sets the restaurant schedule color to green if the current time is within opening times. By default, it's red.
 const openRestaurant = function () {
-    if (curTime.weekDay === restaurantSchedule.weekEnd.indexOf(curTime.weekDay) &&
-        curTime.hours > restaurantSchedule.openAt &&
+    if (curTime.weekDay === restaurantSchedule.weekDay.indexOf(curTime.weekDay) &&
+        curTime.hours >= restaurantSchedule.openAt &&
         curTime.hours < restaurantSchedule.closeAt) {
         document.documentElement.style.setProperty('--open-close', '#88ff00');
         setTimeout(openRestaurant, 10 * 60 * 1000);
         }
 
-    if (curTime.weekDay !== restaurantSchedule.weekEnd.indexOf(curTime.weekDay) &&
-        curTime.hours > restaurantSchedule.openAt &&
-        curTime.hours < restaurantSchedule.closeAt) {
+    if (curTime.weekDay !== restaurantSchedule.weekDay.indexOf(curTime.weekDay) &&
+        curTime.hours >= restaurantSchedule.openAt &&
+        curTime.hours <= restaurantSchedule.closeAt + 1 &&
+        curTime.min <= restaurantSchedule.closeMin) {
         document.documentElement.style.setProperty('--open-close', '#88ff00');
         setTimeout(openRestaurant, 10 * 60 * 1000);
     }
-}
 
-const init = function () {
-    getCurrentTime();
-    openRestaurant();
+    if (curTime.hours < restaurantSchedule.openAt) {
+        document.documentElement.style.setProperty('--open-close', '#ff002e');
+        setTimeout(openRestaurant, 10 * 60 * 1000);
+    }
 }
-
-init();
 
 //// Adding smooth scrolling to all section buttons.
 btnWithID.forEach(arr => arr[0].forEach(btn => btn.addEventListener('click', function(e){
@@ -120,6 +232,26 @@ btnWithID.forEach(arr => arr[0].forEach(btn => btn.addEventListener('click', fun
 
 // Creating food card
 const createCard = function (meal) {
+    let slide;
+
+    if (meal.category === 'beef burgers') {
+        slide = 0;
+    }
+    if (meal.category === 'chicken burgers') {
+        slide = 1;
+    }
+    if (meal.category === 'value meals') {
+        slide = 2;
+    }
+    if (meal.category === 'desert') {
+        slide = 3;
+    }
+    if (meal.category === 'drinks') {
+        slide = 4;
+    }
+    if (meal.category === 'sides') {
+        slide = 5;
+    }
 
     const cardMarkUp = `
     <div class="menu__card">
@@ -138,16 +270,56 @@ const createCard = function (meal) {
         </p>
     </div>
     `
-    menuContainer.insertAdjacentHTML('beforeend', cardMarkUp);
+    menuListSlides[slide].insertAdjacentHTML('beforeend', cardMarkUp);
 }
 
 const clearHTML = function () {
         // Clearing the HTML content first
-        menuContainer.innerHTML = '';
+        menuListSlides.forEach(slide => slide.innerHTML = '');
 }
 
-clearHTML();
+//// Tabbed component
+menuTabsContainer.addEventListener('click', function(e) {
+    const clicked = e.target.closest('.btn--menu-tab');
 
-menu.forEach(meal => createCard(meal))
+    if(!clicked) return;
+
+    // Removing all active classes
+    btnMenuTabs.forEach(t => t.classList.remove('btn--menu-tab--active'));
+    menuListSlides.forEach(c => c.classList.remove('menu__list--active'));
+
+    // Adding active classes appropriately
+    clicked.classList.add('btn--menu-tab--active');
+    document.querySelector(`.menu__list--${clicked.dataset.tab}`).classList.add('menu__list--active')
+})
+
+// const createMenuSlide
 
 // DELIVERY_____________________________________________________________________
+
+//// Tabbed component
+deliveryTabsContainer.addEventListener('click', function(e) {
+    const clicked = e.target.closest('.btn--delivery');
+
+    if(!clicked) return;
+
+    // Removing all active classes
+    btnDeliveryTabs.forEach(t => t.classList.remove('btn--delivery--active'));
+    deliveryTabsContent.forEach(c => c.classList.remove('delivery__paragraph--active'));
+
+    // Adding active classes appropriately
+    clicked.classList.add('btn--delivery--active');
+    document.querySelector(`.delivery__paragraph--${clicked.dataset.tab}`).classList.add('delivery__paragraph--active')
+})
+
+////////////// Initialization
+
+const init = function () {
+    clearHTML();
+    getCurrentTime();
+    openRestaurant();
+
+    menu.forEach(meal => createCard(meal))
+}
+
+init();

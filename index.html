@@ -58,7 +58,7 @@
         </div>
         <div class="header__text-box__schedule">
           <p class="paragraph">
-            Opening times<br/><span>Sat - Mon :</span> 10AM - 11AM<br/><span>Tue - Fri :</span> 10AM - 11:59PM
+            Opening times<br/><span>Sat - Mon :</span> 10AM - 11PM<br/><span>Tue - Fri :</span> 10AM - 11:59PM
           </p>
         </div>
       </div>
@@ -109,18 +109,19 @@
           </div>
 
           <div class="menu__tabs">
-            <button class="btn--menu-tab btn--menu-tab--active">Beef Burgers</button>
-            <button class="btn--menu-tab">Chicken Burgers</button>
-            <button class="btn--menu-tab">Value Meals</button>
-            <button class="btn--menu-tab">Desert</button>
-            <button class="btn--menu-tab">Drinks</button>
-            <button class="btn--menu-tab">Sides</button>
+            <button class="btn--menu-tab btn--menu-tab--active" data-tab="1">Beef Burgers</button>
+            <button class="btn--menu-tab" data-tab="2">Chicken Burgers</button>
+            <button class="btn--menu-tab" data-tab="3">Value Meals</button>
+            <button class="btn--menu-tab" data-tab="4">Desert</button>
+            <button class="btn--menu-tab" data-tab="5">Drinks</button>
+            <button class="btn--menu-tab" data-tab="6">Sides</button>
           </div>
           <div class="menu-box">
             <svg class="btn__nav menu__nav__arrow--list menu__nav__arrow--left btn__nav--left">
               <use xlink:href="#arrow"></use>
             </svg>
-            <div class="menu__list">
+            <div class="menu__list menu__list--1 menu__list--active">
+
               <div class="menu__card">
                 <div class="menu__card__img-box">
                   <div class="menu__card__price">
@@ -136,112 +137,22 @@
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!
                 </p>
               </div>
-              <div class="menu__card">
-                <div class="menu__card__img-box">
-                  <div class="menu__card__price">
-                    <span class="menu__card__price--num">14</span>
-                    <span class="menu__card__price--cur">aed</span>
-                  </div>
-                <img src="css/img/menuimg.jpg" alt="food" class="menu__img">
-                </div>
-                <div class="menu__card__title">
-                  Classic
-                </div>
-                <p class="menu__card__description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!
-                </p>
-              </div>
-              <div class="menu__card">
-                <div class="menu__card__img-box">
-                  <div class="menu__card__price">
-                    <span class="menu__card__price--num">14</span>
-                    <span class="menu__card__price--cur">aed</span>
-                  </div>
-                <img src="css/img/menuimg.jpg" alt="food" class="menu__img">
-                </div>
-                <div class="menu__card__title">
-                  Classic
-                </div>
-                <p class="menu__card__description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!
-                </p>
-              </div>
-              <div class="menu__card">
-                <div class="menu__card__img-box">
-                  <div class="menu__card__price">
-                    <span class="menu__card__price--num">14</span>
-                    <span class="menu__card__price--cur">aed</span>
-                  </div>
-                <img src="css/img/menuimg.jpg" alt="food" class="menu__img">
-                </div>
-                <div class="menu__card__title">
-                  Classic
-                </div>
-                <p class="menu__card__description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!
-                </p>
-              </div>
-              <div class="menu__card">
-                <div class="menu__card__img-box">
-                  <div class="menu__card__price">
-                    <span class="menu__card__price--num">14</span>
-                    <span class="menu__card__price--cur">aed</span>
-                  </div>
-                <img src="css/img/menuimg.jpg" alt="food" class="menu__img">
-                </div>
-                <div class="menu__card__title">
-                  Classic
-                </div>
-                <p class="menu__card__description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!
-                </p>
-              </div>
-              <div class="menu__card">
-                <div class="menu__card__img-box">
-                  <div class="menu__card__price">
-                    <span class="menu__card__price--num">14</span>
-                    <span class="menu__card__price--cur">aed</span>
-                  </div>
-                <img src="css/img/menuimg.jpg" alt="food" class="menu__img">
-                </div>
-                <div class="menu__card__title">
-                  Classic
-                </div>
-                <p class="menu__card__description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!
-                </p>
-              </div>
-              <div class="menu__card">
-                <div class="menu__card__img-box">
-                  <div class="menu__card__price">
-                    <span class="menu__card__price--num">14</span>
-                    <span class="menu__card__price--cur">aed</span>
-                  </div>
-                <img src="css/img/menuimg.jpg" alt="food" class="menu__img">
-                </div>
-                <div class="menu__card__title">
-                  Classic
-                </div>
-                <p class="menu__card__description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!
-                </p>
-              </div>
-              <div class="menu__card">
-                <div class="menu__card__img-box">
-                  <div class="menu__card__price">
-                    <span class="menu__card__price--num">14</span>
-                    <span class="menu__card__price--cur">aed</span>
-                  </div>
-                <img src="css/img/menuimg.jpg" alt="food" class="menu__img">
-                </div>
-                <div class="menu__card__title">
-                  Classic
-                </div>
-                <p class="menu__card__description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, facere!
-                </p>
-              </div>
+              
+            </div>
 
+            <div class="menu__list menu__list--2">
+            </div>
+
+            <div class="menu__list menu__list--3">
+            </div>
+
+            <div class="menu__list menu__list--4">
+            </div>
+
+            <div class="menu__list menu__list--5">
+            </div>
+
+            <div class="menu__list menu__list--6">
             </div>
             <svg class="btn__nav menu__nav__arrow--list menu__nav__arrow--right btn__nav--right">
               <use xlink:href="#arrow"></use>
@@ -268,15 +179,17 @@
         <div class="delivery">
           <div class="delivery__guide">
             <div class="delivery__guide__options">
-              <button class="btn--delivery btn--delivery--active">Talabat</button>
-              <button class="btn--delivery">Call us</button>
-              <button class="btn--delivery">Whatsapp</button>
+              <button class="btn--delivery btn--delivery--active" data-tab="1">Talabat</button>
+              <button class="btn--delivery" data-tab="2">Call us</button>
+              <button class="btn--delivery" data-tab="3">Whatsapp</button>
             </div>
             <div class="delivery__guide__instructions">
               <h2 class="heading-secondary">
                 Instructions
               </h2>
-              <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste doloremque dolor debitis sed maiores, perferendis sapiente earum ducimus amet nisi, maxime inventore, aliquid vero? Commodi, aperiam, reiciendis rerum perspiciatis asperiores eaque quae ad doloremque amet, architecto ipsa? Nisi, quibusdam unde!</p>
+              <p class="delivery__paragraph delivery__paragraph--1 delivery__paragraph--active paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste doloremque dolor debitis sed maiores, perferendis sapiente earum ducimus amet nisi, maxime inventore, aliquid vero? Commodi, aperiam, reiciendis rerum perspiciatis asperiores eaque quae ad doloremque amet, architecto ipsa? Nisi, quibusdam unde!</p>
+              <p class="delivery__paragraph delivery__paragraph--2 paragraph">somebody once told me the world is gonna roll me, i aint the sharpest tool in the sheeeddddd. She was lookin kinda dumb with her finger and her thumb in the shape of an L, on her foreheeaadddd WELL it aint starts coming when it does start coming, something keep the ground running, sdnfkdsknjgfnasdkjgnskajdngkjs</p>
+              <p class="delivery__paragraph delivery__paragraph--3 paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea veniam natus aliquid dolorum eveniet. Magnam qui totam incidunt neque ea vitae adipisci voluptatibus illo atque impedit? Eum est tempora et voluptas sapiente quibusdam debitis amet, itaque esse, commodi veritatis reiciendis porro velit, earum consequuntur optio neque nam nisi. Id, natus.</p>
             </div>
           </div>
           <div class="delivery__map">

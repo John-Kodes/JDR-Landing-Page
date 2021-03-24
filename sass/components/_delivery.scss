@@ -64,6 +64,16 @@
         }
     }
 
+    &__paragraph {
+        display: none;
+        visibility: hidden;
+
+        &--active {
+            display: block;
+            visibility: visible;
+        }
+    }
+
     &__map {
         flex: 2;
         border-radius: 1.7rem;

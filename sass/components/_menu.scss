@@ -31,8 +31,12 @@ width: 100%;
         align-items: center;
     }
 
+    // &__list-container {
+    // }
+
     &__list {
-        display: flex;
+        display: none;
+        visibility: hidden;
         flex-wrap: wrap;
         width: 100%;
         justify-content: center;
@@ -43,7 +47,16 @@ width: 100%;
             margin-right: 2rem;
         }
 
-        @media only screen and (max-width: 72.45em) {
+        & > *:last-child {
+            margin-right: 0;
+        }
+
+        &--active {
+            display: flex;
+            visibility: visible;
+        }
+
+        @media only screen and (max-width: 74.1em) {
 
             & > *:not(:nth-child(4n)) {
                 margin-right: 0;
@@ -56,6 +69,10 @@ width: 100%;
             & > *:last-child {
                 margin-right: 0rem;
             }
+
+            & > *:last-child {
+                margin-right: 0;
+            }
         }
 
         @media only screen and (max-width: 44.95em) {
@@ -66,6 +83,10 @@ width: 100%;
             & > *:nth-child(2n) {
                 margin-right: 0rem;
             }
+
+            & > *:last-child {
+                margin-right: 0;
+            }
         }
 
         @media only screen and (max-width: 21.5em) {
@@ -73,7 +94,12 @@ width: 100%;
             & > *:nth-child(2n-1) {
                 margin-right: 0rem;
             }
+
+            & > *:last-child {
+                margin-right: 0;
+            }
         }
+
     }
 
     &__img{
@@ -169,7 +195,6 @@ width: 100%;
 
         @media only screen and (min-width: 28.125em) {
             justify-content: center;
-
         }
 
         &::after {
@@ -180,7 +205,11 @@ width: 100%;
         }
 
         &__arrow {
-
+            height: 88px;
+            width: 40px;
+            z-index: 10000;
+            fill: black;
+            
             &--list {
                 height: 88px;
                 width: 40px;
@@ -193,11 +222,6 @@ width: 100%;
                 }
             }
 
-            height: 88px;
-            width: 40px;
-            z-index: 10000;
-            fill: black;
-            
             @media only screen and (min-width: 28.125em) {
                 display: none;
                 visibility: none;

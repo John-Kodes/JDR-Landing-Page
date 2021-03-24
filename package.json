@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "devserver": "live-server",
     "parceldev": "parcel index.html",
-    "start": "npm-run-all --parallel parceldev watch:sass"
+    "start": "npm-run-all --parallel parceldev watch:sass",
+    "dev": "npm-run-all --parallel devserver watch:sass"
   },
   "author": "John Daniel Semine",
   "license": "ISC",
