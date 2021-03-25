@@ -130,7 +130,7 @@ button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 14rem;
+  width: 18rem;
   height: 3.3rem;
   padding: 1rem 0rem;
   border-radius: 1.7rem;
@@ -158,13 +158,13 @@ button {
   transition: all .2s;
   transform: translateY(0) scale(1); }
   .btn__nav--right:hover {
-    transform: translateY(-0.5rem) scale(1.05); }
+    transform: translateX(0.5rem) scale(1); }
   .btn__nav--left:hover {
-    transform: translateY(-0.5rem) scale(-1.05); }
+    transform: translateX(-0.5rem) scale(-1); }
   .btn__nav--right:active {
-    transform: translateY(0) scale(1); }
+    transform: translateX(0) scale(1); }
   .btn__nav--left:active {
-    transform: translateY(0) scale(-1); }
+    transform: translateX(0) scale(-1); }
 
 .btn--delivery {
   display: inline-flex;
@@ -232,7 +232,7 @@ button {
     display: flex;
     justify-content: space-evenly;
     color: black;
-    max-width: 100rem;
+    max-width: 105rem;
     width: 100%;
     margin-bottom: 3rem; }
     @media only screen and (max-width: 44.38em) {
@@ -302,7 +302,10 @@ button {
     background-color: white;
     border-radius: 1.8rem;
     margin-bottom: 2rem;
-    box-shadow: 0 0.8rem 0.7rem rgba(0, 0, 0, 0.05); }
+    box-shadow: 0 0.8rem 0.7rem rgba(0, 0, 0, 0.05);
+    transition: transform .2s; }
+    .menu__card:hover {
+      transform: translateY(-1rem); }
     @media only screen and (max-width: 33.25em) {
       .menu__card {
         max-width: 18rem; } }

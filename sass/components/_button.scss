@@ -73,7 +73,7 @@ button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 14rem;
+  width: 18rem;
   height: 3.3rem;
   padding: 1rem 0rem;
   border-radius: 1.7rem;
@@ -114,19 +114,19 @@ button {
   transform: translateY(0) scale(1);
 
   &--right:hover {
-    transform: translateY(-.5rem) scale(1.05);
+    transform: translateX(.5rem) scale(1);
   }
 
   &--left:hover {
-    transform: translateY(-.5rem) scale(-1.05);
+    transform: translateX(-.5rem) scale(-1);
   }
 
   &--right:active {
-    transform: translateY(0) scale(1);
+    transform: translateX(0) scale(1);
   }
 
   &--left:active {
-    transform: translateY(0) scale(-1);
+    transform: translateX(0) scale(-1);
   }
 }
 

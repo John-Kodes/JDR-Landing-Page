@@ -278,6 +278,9 @@ const clearHTML = function () {
         menuListSlides.forEach(slide => slide.innerHTML = '');
 }
 
+let curSlide = 1;
+const maxSlides = menuListSlides.length;
+
 //// Tabbed component
 menuTabsContainer.addEventListener('click', function(e) {
     const clicked = e.target.closest('.btn--menu-tab');
@@ -288,10 +291,43 @@ menuTabsContainer.addEventListener('click', function(e) {
     btnMenuTabs.forEach(t => t.classList.remove('btn--menu-tab--active'));
     menuListSlides.forEach(c => c.classList.remove('menu__list--active'));
 
+    curSlide = clicked.dataset.tab;
+
     // Adding active classes appropriately
     clicked.classList.add('btn--menu-tab--active');
-    document.querySelector(`.menu__list--${clicked.dataset.tab}`).classList.add('menu__list--active')
+    document.querySelector(`.menu__list--${curSlide}`).classList.add('menu__list--active')
 })
+
+const goToSlide = function(slide) {
+    btnMenuTabs.forEach(t => t.classList.remove('btn--menu-tab--active'));
+    menuListSlides.forEach(c => c.classList.remove('menu__list--active'));
+
+    document.querySelector(`.btn--menu-tab--${slide}`).classList.add('btn--menu-tab--active');
+    document.querySelector(`.menu__list--${slide}`).classList.add('menu__list--active')
+}
+
+//// Next tab function
+btnRight.forEach(btn => btn.addEventListener('click', function (e) {
+    const clicked = e.target.closest('.btn__nav--right');
+
+    if(!clicked) return;
+
+    if (curSlide === maxSlides)  curSlide = 1
+    else curSlide++;
+    goToSlide(curSlide)
+}));
+
+//// Previous tab function
+btnLeft.forEach(btn => btn.addEventListener('click', function (e) {
+    const clicked = e.target.closest('.btn__nav--left');
+
+    if(!clicked) return;
+
+    if (curSlide <= 1)  curSlide = maxSlides
+    else curSlide--;
+    goToSlide(curSlide)
+}))
+
 
 // const createMenuSlide
 
