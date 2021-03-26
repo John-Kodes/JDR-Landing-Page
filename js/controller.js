@@ -220,8 +220,6 @@ const openRestaurant = function () {
 btnWithID.forEach(arr => arr[0].forEach(btn => btn.addEventListener('click', function(e){
     e.preventDefault();
 
-    console.log(arr[1].getBoundingClientRect());
-
     const sectionCoords = arr[1].getBoundingClientRect();
     window.scrollTo({
         left: sectionCoords.left + window.pageXOffset,
@@ -294,7 +292,6 @@ menuTabsContainer.addEventListener('click', function(e) {
     menuListSlides.forEach(c => c.classList.remove('menu__list--active'));
 
     curSlide = clicked.dataset.tab;
-    console.log(curSlide);
 
     // Adding active classes appropriately
     clicked.classList.add('btn--menu-tab--active');
