@@ -80,8 +80,14 @@ button {
   text-decoration: none;
   font-weight: 600;
   color: $color-grey-dark-1;
+  background-color: transparent;
   box-shadow: 0 .5rem 1.4rem rgba($color-black, .10), 0 -.5rem .8rem rgba($color-white, 1);
   transition: all .2s;
+
+  &:hover {
+    transform: translateY(-.3rem);
+    background-color: white;
+  }
 
   @media only screen and (max-width:44.38em) {
     padding: 3rem 1rem;
@@ -95,13 +101,17 @@ button {
     color: $color-white;
     font-weight: 600;
     box-shadow: 0 1rem 2rem rgba($color-black, .10), 0 -.5rem .8rem rgba($color-white, 0);
-    transform: translateY(-.5rem);
+    transform: translateY(-.8rem);
 
     background-image: linear-gradient(
       $shade-dir,
       $color-primary-light,
       $color-primary-dark
     );
+
+    &:hover {
+      transform: translateY(-.8rem);
+    }
   }
 
   &:active {

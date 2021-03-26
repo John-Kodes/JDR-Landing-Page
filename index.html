@@ -4,17 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"
     rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
     href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
     rel="stylesheet"
     />
+
+    <!-- GOOGLE MAPS -->
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-115xe-7vK10XC_EpaS0WH9YI5UpmKTc&callback=initMap&libraries=&v=weekly"
+    async
+    ></script>
 
     <link rel="stylesheet" href="./css/style.css" />
     <script defer src="./js/controller.js"></script>
@@ -192,8 +198,9 @@
               <p class="delivery__paragraph delivery__paragraph--3 paragraph">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea veniam natus aliquid dolorum eveniet. Magnam qui totam incidunt neque ea vitae adipisci voluptatibus illo atque impedit? Eum est tempora et voluptas sapiente quibusdam debitis amet, itaque esse, commodi veritatis reiciendis porro velit, earum consequuntur optio neque nam nisi. Id, natus.</p>
             </div>
           </div>
-          <div class="delivery__map">
-            map
+          <a href="https://www.google.com/maps/place/John+Daniel's/@25.2632265,55.3285004,17.04z/data=!4m5!3m4!1s0x0:0x3c400afb6fa440a2!8m2!3d25.2633512!4d55.3305424" class="delivery__map__link" target="_blank">Open google maps</a>
+          <div class="delivery__map" id="map">
+            <div class="delivery__map__desclaimer">Map is unavailable.<br/>Please try refreshing the page</div>
           </div>
         </div>
       </section>

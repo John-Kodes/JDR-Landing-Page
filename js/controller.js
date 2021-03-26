@@ -220,6 +220,8 @@ const openRestaurant = function () {
 btnWithID.forEach(arr => arr[0].forEach(btn => btn.addEventListener('click', function(e){
     e.preventDefault();
 
+    console.log(arr[1].getBoundingClientRect());
+
     const sectionCoords = arr[1].getBoundingClientRect();
     window.scrollTo({
         left: sectionCoords.left + window.pageXOffset,
@@ -292,6 +294,7 @@ menuTabsContainer.addEventListener('click', function(e) {
     menuListSlides.forEach(c => c.classList.remove('menu__list--active'));
 
     curSlide = clicked.dataset.tab;
+    console.log(curSlide);
 
     // Adding active classes appropriately
     clicked.classList.add('btn--menu-tab--active');
@@ -312,7 +315,7 @@ btnRight.forEach(btn => btn.addEventListener('click', function (e) {
 
     if(!clicked) return;
 
-    if (curSlide === maxSlides)  curSlide = 1
+    if (curSlide >= maxSlides)  curSlide = 1;
     else curSlide++;
     goToSlide(curSlide)
 }));
@@ -347,6 +350,34 @@ deliveryTabsContainer.addEventListener('click', function(e) {
     clicked.classList.add('btn--delivery--active');
     document.querySelector(`.delivery__paragraph--${clicked.dataset.tab}`).classList.add('delivery__paragraph--active')
 })
+
+//////////////// GOOGLE MAPS
+
+// Restaurant coordinates
+const restaurantCoords = {
+    lat: 25.2633530,
+    lng: 55.3305424
+}
+
+//// Adding the map to the UI
+let infoWindow;
+
+function initMap() {
+  const  map = new google.maps.Map(document.getElementById("map"), {
+    center: restaurantCoords,
+    zoom: 18,
+    disableDefaultUI: true,
+    zoomControl: true
+  });
+
+  // Adding the marker
+  const marker = new google.maps.Marker({
+      position: restaurantCoords,
+      icon: 'https://cdn.discordapp.com/attachments/711222589892329516/824924384560283648/Google_marker.png',
+      map: map
+  })
+
+}
 
 ////////////// Initialization
 

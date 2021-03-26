@@ -137,8 +137,12 @@ button {
   text-decoration: none;
   font-weight: 600;
   color: #646464;
+  background-color: transparent;
   box-shadow: 0 0.5rem 1.4rem rgba(0, 0, 0, 0.1), 0 -0.5rem 0.8rem white;
   transition: all .2s; }
+  .btn--menu-tab:hover {
+    transform: translateY(-0.3rem);
+    background-color: white; }
   @media only screen and (max-width: 44.38em) {
     .btn--menu-tab {
       padding: 3rem 1rem; } }
@@ -149,8 +153,10 @@ button {
     color: white;
     font-weight: 600;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1), 0 -0.5rem 0.8rem rgba(255, 255, 255, 0);
-    transform: translateY(-0.5rem);
+    transform: translateY(-0.8rem);
     background-image: linear-gradient(-105deg, #ff4d00, #ff002e); }
+    .btn--menu-tab--active:hover {
+      transform: translateY(-0.8rem); }
   .btn--menu-tab:active {
     transform: translateY(0.3rem); }
 
@@ -263,7 +269,7 @@ button {
     .menu__list--active {
       display: flex;
       visibility: visible; }
-    @media only screen and (max-width: 74.1em) {
+    @media only screen and (max-width: 71.1875em) {
       .menu__list > *:not(:nth-child(4n)) {
         margin-right: 0; }
       .menu__list > *:not(:nth-child(3n)) {
@@ -279,7 +285,7 @@ button {
         margin-right: 0rem; }
       .menu__list > *:last-child {
         margin-right: 0; } }
-    @media only screen and (max-width: 21.5em) {
+    @media only screen and (max-width: 33.25em) {
       .menu__list > *:nth-child(2n-1) {
         margin-right: 0rem; }
       .menu__list > *:last-child {
@@ -307,9 +313,6 @@ button {
     .menu__card:hover {
       transform: translateY(-1rem); }
     @media only screen and (max-width: 33.25em) {
-      .menu__card {
-        max-width: 18rem; } }
-    @media only screen and (max-width: 21.5em) {
       .menu__card {
         max-width: 80%; } }
     .menu__card__title {
@@ -363,6 +366,9 @@ button {
       width: 40%;
       border-bottom: 0.4rem solid #ebe6e7;
       border-radius: 10rem; }
+      @media only screen and (max-width: 28.125em) {
+        .menu__nav::after {
+          content: none; } }
     .menu__nav__arrow {
       height: 88px;
       width: 40px;
@@ -383,26 +389,12 @@ button {
           visibility: none; } }
       .menu__nav__arrow--left {
         transform: scale(-1); }
-  .menu__dots__dot {
-    border: none;
-    background-color: #b9b9b9;
-    opacity: 0.7;
-    height: 1rem;
-    width: 1rem;
-    border-radius: 50%;
-    margin-right: 1.75rem;
-    cursor: pointer;
-    transition: all 0.5s; }
-    .menu__dots__dot:last-child {
-      margin: 0; }
-    .menu__dots__dot--active {
-      background-color: #ff002e;
-      opacity: 1; }
 
 .delivery {
   display: flex;
   max-width: 105rem;
-  padding: 2rem; }
+  padding: 2rem;
+  position: relative; }
   @media only screen and (max-width: 41em) {
     .delivery {
       flex-direction: column-reverse;
@@ -456,10 +448,37 @@ button {
       display: block;
       visibility: visible; }
   .delivery__map {
+    position: relative;
     flex: 2;
     border-radius: 1.7rem;
     box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15);
     background-image: linear-gradient(to bottom, #414141, #1f1f1f); }
+    .delivery__map__link {
+      position: absolute;
+      text-decoration: none;
+      color: #2a51ff;
+      font-weight: 600;
+      background-color: white;
+      padding: .5rem 1.5rem;
+      border-radius: 10rem;
+      box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+      z-index: 9;
+      top: 3rem;
+      right: 3rem;
+      border: 2px solid #839aff;
+      transition: all .2s; }
+      .delivery__map__link:hover {
+        padding: .5rem 4rem .5rem 1.5rem;
+        transform-origin: right; }
+    .delivery__map__desclaimer {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 600;
+      color: white; }
 
 .footer {
   padding: 10rem 0 2rem;
@@ -659,6 +678,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-attachment: fixed;
   background-image: url(img/MapBG.png);
   background-size: cover;
   padding: 10rem 0; }

@@ -2,6 +2,7 @@
     display: flex;
     max-width: 105rem;
     padding: 2rem;
+    position: relative;
 
     @media only screen and (max-width: 41em) {
         flex-direction: column-reverse;
@@ -75,11 +76,46 @@
     }
 
     &__map {
+        position: relative;
         flex: 2;
         border-radius: 1.7rem;
         box-shadow: 0 .4rem .8rem rgba($color-black, .15);
 
         background-image: linear-gradient(to bottom, rgb(65, 65, 65), rgb(31, 31, 31));
+
+        &__link{
+            position: absolute;
+            text-decoration: none;
+            color: #2a51ff;
+            font-weight: 600;
+            background-color: $color-white;
+            padding: .5rem 1.5rem;
+            border-radius: 10rem;
+            box-shadow: 0 .4rem .8rem rgba($color-black, .2);
+            z-index: 9;
+            top: 3rem;
+            right: 3rem;
+            border: 2px solid #839aff;
+
+            transition: all .2s;
+
+            &:hover {
+                padding: .5rem 4rem .5rem 1.5rem;
+                transform-origin: right;
+            }
+        }
+
+        &__desclaimer {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+
+            font-size: 3rem;
+            font-weight: 600;
+            color: $color-white;
+        }
     }
 }
 
