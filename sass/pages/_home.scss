@@ -107,10 +107,17 @@
   }
 }
 
+.gallery-section-container {
+  background-color: $color-grey-dark-2;
+}
+
 .section-gallery {
   display: flex;
+  justify-content: center;
   max-width: 153.6rem;
   flex-wrap: wrap;
+
+  margin: 0 auto;
 
   &__img-container {
     flex: 1;

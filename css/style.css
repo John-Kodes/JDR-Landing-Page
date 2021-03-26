@@ -475,6 +475,7 @@ button {
     flex: 2;
     border-radius: 1.7rem;
     box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15);
+    min-height: 60rem;
     background-image: linear-gradient(to bottom, #414141, #1f1f1f); }
     .delivery__map__link {
       position: absolute;
@@ -709,10 +710,15 @@ button {
     .section-delivery .heading-primary--section {
       font-size: 4rem; } }
 
+.gallery-section-container {
+  background-color: #2C2C2C; }
+
 .section-gallery {
   display: flex;
+  justify-content: center;
   max-width: 153.6rem;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  margin: 0 auto; }
   .section-gallery__img-container {
     flex: 1;
     overflow: hidden;
