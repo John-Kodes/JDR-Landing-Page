@@ -85,7 +85,7 @@ const classicChicken = {
     name: 'Classic',
     price: '14',
     img: "css/img/menuimg.jpg",
-    description: 'Beef burger topped with JD Special Sauce, Cheese Sauce & Veggies (Onion, Tomato & Lettuce)'
+    description: 'Chicken burger topped with JD Special Sauce, Cheese Sauce & Veggies (Onion, Tomato & Lettuce)'
 }
 
 const arabishChicken = {
@@ -93,7 +93,7 @@ const arabishChicken = {
     name: 'Arabish',
     price: '14',
     img: "css/img/menuimg.jpg",
-    description: 'Beef burger topped with JD Garlic Sauce& Vegies (Onion, Tomato & Lettuce)'
+    description: 'Chicken burger topped with JD Garlic Sauce& Vegies (Onion, Tomato & Lettuce)'
 }
 
 const breakfastChicken = {
@@ -101,7 +101,7 @@ const breakfastChicken = {
     name: 'Breakfast',
     price: '16',
     img: "css/img/menuimg.jpg",
-    description: 'Beef burger topped with Egg, Cheese Sauce , JD Special Sauce & Veggies (Onion, Tomato, Lettuce)'
+    description: 'Chicken burger topped with Egg, Cheese Sauce , JD Special Sauce & Veggies (Onion, Tomato, Lettuce)'
 }
 
 const kilobiteChicken = {
@@ -109,7 +109,7 @@ const kilobiteChicken = {
     name: 'Kilobite',
     price: '16',
     img: "css/img/menuimg.jpg",
-    description: 'Beef burger topped with Bacon, Cheese Sauce, JD Special Sauce & Veggies (Onion, Tomato, Lettuce)'
+    description: 'Chicken burger topped with Bacon, Cheese Sauce, JD Special Sauce & Veggies (Onion, Tomato, Lettuce)'
 }
 
 const megabiteChicken = {
@@ -117,7 +117,7 @@ const megabiteChicken = {
     name: 'Megabite',
     price: '27',
     img: "css/img/menuimg.jpg",
-    description: 'Double beef burger topped with Bacon, Double Cheese, Cheese Sauce, JD Special Sauce & Veggies (Onion, Tomato, Lettuce)'
+    description: 'Double Chicken burger topped with Bacon, Double Cheese, Cheese Sauce, JD Special Sauce & Veggies (Onion, Tomato, Lettuce)'
 }
 
 const allChickenBurgers = [friesNDrinksChicken, classicChicken, arabishChicken, breakfastChicken, kilobiteChicken, megabiteChicken]
@@ -137,7 +137,7 @@ const bucket10 = {
     name: 'Bucket 10Pcs',
     price: '??',
     img: "css/img/menuimg.jpg",
-    description: '10 Pieces of chicken with 2 sauces of your choosing'
+    description: '10 Pieces of chicken with Gravy AND Garlic sauce'
 }
 
 const bucket20 = {
@@ -145,7 +145,7 @@ const bucket20 = {
     name: 'Bucket 20Pcs',
     price: '??',
     img: "css/img/menuimg.jpg",
-    description: '20 Pieces of chicken with 2 sauces of your choosing'
+    description: '20 Pieces of chicken with Gravy AND Garlic sauce'
 }
 
 const vm1 = {
@@ -555,6 +555,17 @@ btnLeft.forEach(btn => btn.addEventListener('click', function (e) {
     goToSlide(curSlide)
 }))
 
+const menuButtons = [...btnMenuTabs, ...btnLeft, ...btnRight]
+
+menuButtons.forEach(btn => btn.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const sectionCoords = sectionMenu.getBoundingClientRect();
+    window.scrollTo({
+        left: sectionCoords.left + window.pageXOffset,
+        top: sectionCoords.top + window.pageYOffset,
+    })
+}))
 
 // const createMenuSlide
 
