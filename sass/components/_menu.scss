@@ -40,7 +40,7 @@ width: 100%;
         flex-wrap: wrap;
         width: 100%;
         justify-content: center;
-        align-items: center;
+        align-items: stretch;
         flex: 1;
 
         & > *:not(:nth-child(4n)) {
@@ -121,7 +121,6 @@ width: 100%;
     &__card {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         max-width: 24rem;
         width: 100%;
@@ -166,9 +165,21 @@ width: 100%;
         }
 
         &__title {
-            font-family: 'pacifico', sans-serif;
-            font-size: 2.2rem;
+            font-weight: 700;
+            font-size: 2.4rem;
             margin-top: 1rem;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                width: 4rem;
+                border-bottom: 2px solid rgba($color-black, .2);
+                border-radius: 10rem;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
         }
 
         &__description {
@@ -176,7 +187,8 @@ width: 100%;
             text-align: center; 
             font-size: 1.4rem;
             font-weight: 400;
-            margin-top: .3rem;
+            margin-top: .4rem;
+
         }
 
         &__price {

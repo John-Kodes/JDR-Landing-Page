@@ -269,7 +269,7 @@ button {
     flex-wrap: wrap;
     width: 100%;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     flex: 1; }
     .menu__list > *:not(:nth-child(4n)) {
       margin-right: 2rem; }
@@ -313,7 +313,6 @@ button {
   .menu__card {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     max-width: 24rem;
     width: 100%;
@@ -342,15 +341,25 @@ button {
       .menu__card {
         max-width: 80%; } }
     .menu__card__title {
-      font-family: 'pacifico', sans-serif;
-      font-size: 2.2rem;
-      margin-top: 1rem; }
+      font-weight: 700;
+      font-size: 2.4rem;
+      margin-top: 1rem;
+      position: relative; }
+      .menu__card__title::after {
+        content: '';
+        position: absolute;
+        width: 4rem;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+        border-radius: 10rem;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, -50%); }
     .menu__card__description {
       width: 80%;
       text-align: center;
       font-size: 1.4rem;
       font-weight: 400;
-      margin-top: .3rem; }
+      margin-top: .4rem; }
     .menu__card__price {
       box-sizing: content-box;
       display: flex;
