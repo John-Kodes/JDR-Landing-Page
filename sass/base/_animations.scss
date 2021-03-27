@@ -1,5 +1,6 @@
 @keyframes moveInLeft {
   0% {
+    display: inline;
     opacity: 0;
     transform: translateX(-10rem);
   }

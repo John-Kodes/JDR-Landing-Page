@@ -135,6 +135,28 @@ width: 100%;
 
         transition: transform .2s;
 
+        &--special {
+            background-color: none;
+            background-image: linear-gradient($shade-dir, $color-primary-dark, $color-primary-light);
+            color: $color-white;
+
+            & .menu__card__price {
+                border: .4rem solid $color-primary-dark;
+                background-color: $color-white;
+
+                & .menu__card__price--num{
+                    color: $color-primary-dark;
+
+                }
+    
+                & .menu__card__price--cur{
+                    color: $color-primary-dark;
+                    font-weight: 600;
+                }
+            }
+    
+        }
+
         &:hover {
             transform: translateY(-1rem);
         }
@@ -145,14 +167,14 @@ width: 100%;
 
         &__title {
             font-family: 'pacifico', sans-serif;
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-top: 1rem;
         }
 
         &__description {
             width: 80%;
             text-align: center; 
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             font-weight: 400;
             margin-top: .3rem;
         }
@@ -165,7 +187,7 @@ width: 100%;
             height: 5rem;
             width: 5rem;
             background-color: $color-primary-dark;
-            border: .4rem solid rgb(255, 255, 255);
+            border: .4rem solid $color-white;
             border-radius: 50%;
             justify-content: center;
             align-items: center;

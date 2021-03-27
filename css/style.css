@@ -3,6 +3,7 @@
 
 @keyframes moveInLeft {
   0% {
+    display: inline;
     opacity: 0;
     transform: translateX(-10rem); }
   100% {
@@ -323,6 +324,18 @@ button {
     margin-bottom: 2rem;
     box-shadow: 0 0.8rem 0.7rem rgba(0, 0, 0, 0.05);
     transition: transform .2s; }
+    .menu__card--special {
+      background-color: none;
+      background-image: linear-gradient(-105deg, #ff002e, #ff4d00);
+      color: white; }
+      .menu__card--special .menu__card__price {
+        border: 0.4rem solid #ff002e;
+        background-color: white; }
+        .menu__card--special .menu__card__price .menu__card__price--num {
+          color: #ff002e; }
+        .menu__card--special .menu__card__price .menu__card__price--cur {
+          color: #ff002e;
+          font-weight: 600; }
     .menu__card:hover {
       transform: translateY(-1rem); }
     @media only screen and (max-width: 33.25em) {
@@ -330,12 +343,12 @@ button {
         max-width: 80%; } }
     .menu__card__title {
       font-family: 'pacifico', sans-serif;
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-top: 1rem; }
     .menu__card__description {
       width: 80%;
       text-align: center;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
       font-weight: 400;
       margin-top: .3rem; }
     .menu__card__price {
@@ -475,7 +488,6 @@ button {
     flex: 2;
     border-radius: 1.7rem;
     box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.15);
-    min-height: 60rem;
     background-image: linear-gradient(to bottom, #414141, #1f1f1f); }
     .delivery__map__link {
       position: absolute;
@@ -583,20 +595,30 @@ button {
     height: 100%;
     color: white; }
     .header__text-box .heading-primary {
+      opacity: 0;
+      margin-bottom: 3rem;
       background-image: linear-gradient(-105deg, #FFE4C3, #FFADAD);
       -webkit-background-clip: text;
-      color: transparent; }
+      color: transparent;
+      animation: moveInLeft 1s;
+      animation-fill-mode: forwards; }
       @media only screen and (max-width: 48.75em) {
         .header__text-box .heading-primary {
           line-height: 1;
           margin-bottom: 2rem; } }
     .header__text-box .heading-secondary {
-      margin-bottom: 4rem; }
+      opacity: 0;
+      margin-bottom: 4rem;
+      animation: moveInLeft 1s none .1s;
+      animation-fill-mode: forwards; }
     .header__text-box__buttons {
       display: flex;
       justify-content: space-between;
       max-width: 35rem;
-      width: 100%; }
+      width: 100%;
+      opacity: 0;
+      animation: moveInLeft 1s none .2s;
+      animation-fill-mode: forwards; }
     .header__text-box__schedule {
       display: flex;
       align-items: center;
@@ -605,7 +627,10 @@ button {
       padding: 1rem 1rem 1rem 2.4rem;
       border-radius: 1.7rem;
       background-color: rgba(0, 0, 0, 0.4);
-      position: relative; }
+      position: relative;
+      opacity: 0;
+      animation: moveInLeft 1s none .3s;
+      animation-fill-mode: forwards; }
       .header__text-box__schedule span {
         font-weight: 600; }
       .header__text-box__schedule::before {

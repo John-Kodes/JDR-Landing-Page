@@ -5,6 +5,14 @@
 // ------FOOD OBJECTS------
 
 //// Beef burgers
+const friesNDrinks = {
+    category: 'beef burgers',
+    name: '+Fries & Drinks',
+    price: '9',
+    img: "css/img/menuimg.jpg",
+    description: 'For every burger, you can pay 9 AED for fries and blue lagoon!'
+}
+
 const classic = {
     category: 'beef burgers',
     name: 'Classic',
@@ -121,7 +129,7 @@ const vm6 = {
 
 //// Sides
 
-const menu = [classic, arabish, breakfast, kilobite, megabite, gigabite, terabite, vm1, vm2, vm3, vm4, vm5, vm6]
+const menu = [friesNDrinks, classic, arabish, breakfast, kilobite, megabite, gigabite, terabite, vm1, vm2, vm3, vm4, vm5, vm6]
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -234,27 +242,15 @@ btnWithID.forEach(arr => arr[0].forEach(btn => btn.addEventListener('click', fun
 const createCard = function (meal) {
     let slide;
 
-    if (meal.category === 'beef burgers') {
-        slide = 0;
-    }
-    if (meal.category === 'chicken burgers') {
-        slide = 1;
-    }
-    if (meal.category === 'value meals') {
-        slide = 2;
-    }
-    if (meal.category === 'desert') {
-        slide = 3;
-    }
-    if (meal.category === 'drinks') {
-        slide = 4;
-    }
-    if (meal.category === 'sides') {
-        slide = 5;
-    }
+    if (meal.category === 'beef burgers') slide = 0;
+    if (meal.category === 'chicken burgers') slide = 1;
+    if (meal.category === 'value meals') slide = 2;
+    if (meal.category === 'desert') slide = 3;
+    if (meal.category === 'drinks') slide = 4;
+    if (meal.category === 'sides') slide = 5;
 
     const cardMarkUp = `
-    <div class="menu__card">
+    <div class="menu__card ${meal.name === '+Fries & Drinks' ? 'menu__card--special' : ''}">
         <div class="menu__card__img-box">
             <div class="menu__card__price">
                 <span class="menu__card__price--num">${meal.price}</span>
