@@ -278,6 +278,14 @@ const friesL = {
     description: ''
 }
 
+const nachoFries = {
+    category: 'sides',
+    name: 'Nacho Fries',
+    price: '??',
+    img: "css/img/menuimg.jpg",
+    description: ''
+}
+
 const garlicSauce = {
     category: 'sides',
     name: 'garlic Sauce',
@@ -358,7 +366,7 @@ const mayonaise = {
     description: ''
 }
 
-const allSides = [rice, friesS, friesL, garlicSauce, gravySauce, bacon, egg, cheeseSquare, cheeseDip, JDSpecialSauce, chipotle, ketchup, mayonaise]
+const allSides = [rice, friesS, friesL, nachoFries, garlicSauce, gravySauce, bacon, egg, cheeseSquare, cheeseDip, JDSpecialSauce, chipotle, ketchup, mayonaise]
 
 const menu = [...allBeefBurgers, ...allChickenBurgers, ...allVM, ...allDesert, ...allDrinks, ...allSides]
 
