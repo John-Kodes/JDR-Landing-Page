@@ -1,121 +1,124 @@
 .delivery {
+  display: flex;
+  max-width: 105rem;
+  padding: 2rem;
+  position: relative;
+
+  @media only screen and (max-width: 41em) {
+    flex-direction: column-reverse;
+    height: 100rem;
+  }
+
+  &__guide {
     display: flex;
-    max-width: 105rem;
-    padding: 2rem;
-    position: relative;
+    flex-direction: column;
+    align-items: stretch;
+    flex: 1;
+    margin-right: 3rem;
 
     @media only screen and (max-width: 41em) {
-        flex-direction: column-reverse;
-        height: 100rem;
+      flex-direction: row;
+      margin: 3rem 0 0 0;
     }
 
-    &__guide {
-        display: flex;
+    @media only screen and (max-width: 25.62em) {
+      flex-direction: column;
+      margin: 3rem 0 0 0;
+    }
+
+    &__options {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+
+      @media only screen and (max-width: 41em) {
+        margin-bottom: 0;
+      }
+
+      @media only screen and (max-width: 25.62em) {
         flex-direction: column;
-        align-items: stretch;
-        flex: 1;
-        margin-right: 3rem;
-
-        @media only screen and (max-width: 41em) {
-            flex-direction: row;
-            margin: 3rem 0 0 0;
-        }
-
-        @media only screen and (max-width: 25.62em) {
-            flex-direction: column;
-            margin: 3rem 0 0 0;
-        }
-
-        &__options{
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 2rem;
-
-            @media only screen and (max-width: 41em) {
-                margin-bottom: 0;
-            }
-
-            @media only screen and (max-width: 25.62em) {
-                flex-direction: column;
-                margin-bottom: 2rem;
-            }
-        }
-
-        &__instructions {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 3rem;
-            border-radius: 1.7rem;
-            background-color: $color-white-2;
-            box-shadow: 0 .4rem .8rem rgba($color-black, .15);
-
-            & h2 {
-                margin-bottom: 2rem;
-            }
-
-            @media only screen and (max-width: 41em) {
-                margin-left: 3rem;
-            }
-
-            @media only screen and (max-width: 25.62em) {
-                margin-left: 0rem;
-            }
-        }
+        margin-bottom: 2rem;
+      }
     }
 
-    &__paragraph {
-        display: none;
-        visibility: hidden;
+    &__instructions {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem;
+      border-radius: 1.7rem;
+      background-color: $color-white-2;
+      box-shadow: 0 0.4rem 0.8rem rgba($color-black, 0.15);
 
-        &--active {
-            display: block;
-            visibility: visible;
-        }
+      & h2 {
+        margin-bottom: 2rem;
+      }
+
+      @media only screen and (max-width: 41em) {
+        margin-left: 3rem;
+      }
+
+      @media only screen and (max-width: 25.62em) {
+        margin-left: 0rem;
+      }
+    }
+  }
+
+  &__paragraph {
+    display: none;
+    visibility: hidden;
+
+    &--active {
+      display: block;
+      visibility: visible;
+    }
+  }
+
+  &__map {
+    position: relative;
+    flex: 2;
+    border-radius: 1.7rem;
+    box-shadow: 0 0.4rem 0.8rem rgba($color-black, 0.15);
+
+    background-image: linear-gradient(
+      to bottom,
+      rgb(65, 65, 65),
+      rgb(31, 31, 31)
+    );
+
+    &__link {
+      position: absolute;
+      text-decoration: none;
+      color: #2a51ff;
+      font-weight: 600;
+      background-color: $color-white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 10rem;
+      box-shadow: 0 0.4rem 0.8rem rgba($color-black, 0.2);
+      z-index: 9;
+      top: 3rem;
+      right: 3rem;
+      border: 2px solid #839aff;
+
+      transition: all 0.2s;
+
+      &:hover {
+        padding: 0.5rem 4rem 0.5rem 1.5rem;
+        transform-origin: right;
+      }
     }
 
-    &__map {
-        position: relative;
-        flex: 2;
-        border-radius: 1.7rem;
-        box-shadow: 0 .4rem .8rem rgba($color-black, .15);
+    &__desclaimer {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
 
-        background-image: linear-gradient(to bottom, rgb(65, 65, 65), rgb(31, 31, 31));
-
-        &__link{
-            position: absolute;
-            text-decoration: none;
-            color: #2a51ff;
-            font-weight: 600;
-            background-color: $color-white;
-            padding: .5rem 1.5rem;
-            border-radius: 10rem;
-            box-shadow: 0 .4rem .8rem rgba($color-black, .2);
-            z-index: 9;
-            top: 3rem;
-            right: 3rem;
-            border: 2px solid #839aff;
-
-            transition: all .2s;
-
-            &:hover {
-                padding: .5rem 4rem .5rem 1.5rem;
-                transform-origin: right;
-            }
-        }
-
-        &__desclaimer {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-
-            font-size: 3rem;
-            font-weight: 600;
-            color: $color-white;
-        }
+      font-size: 3rem;
+      font-weight: 600;
+      color: $color-white;
     }
+  }
 }
-

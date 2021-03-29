@@ -300,10 +300,9 @@ button {
       .menu__list > *:last-child {
         margin-right: 0; } }
   .menu__img {
-    height: 13rem;
-    width: 13rem;
-    border-radius: 50%;
-    margin-bottom: 1.4rem; }
+    height: 14rem;
+    width: 14rem;
+    border-radius: 50%; }
     @media only screen and (max-width: 33.25em) {
       .menu__img {
         height: 20rem;
@@ -322,7 +321,7 @@ button {
     border-radius: 1.8rem;
     margin-bottom: 2rem;
     box-shadow: 0 0.8rem 0.7rem rgba(0, 0, 0, 0.05);
-    transition: transform .2s; }
+    transition: transform 0.2s; }
     .menu__card--special {
       background-color: none;
       background-image: linear-gradient(-105deg, #ff002e, #ff4d00);
@@ -334,7 +333,7 @@ button {
           color: #ff002e; }
         .menu__card--special .menu__card__price .menu__card__price--cur {
           color: #ff002e;
-          font-weight: 600; }
+          font-weight: 700; }
     .menu__card:hover {
       transform: translateY(-1rem); }
     @media only screen and (max-width: 33.25em) {
@@ -359,7 +358,7 @@ button {
       text-align: center;
       font-size: 1.4rem;
       font-weight: 400;
-      margin-top: .4rem; }
+      margin-top: 0.4rem; }
     .menu__card__price {
       box-sizing: content-box;
       display: flex;
@@ -389,7 +388,7 @@ button {
       .menu__card__price--cur {
         text-transform: uppercase;
         color: white;
-        font-weight: 600;
+        font-weight: 700;
         font-size: 1rem;
         margin-left: 2px;
         line-height: 1; }
@@ -504,16 +503,16 @@ button {
       color: #2a51ff;
       font-weight: 600;
       background-color: white;
-      padding: .5rem 1.5rem;
+      padding: 0.5rem 1.5rem;
       border-radius: 10rem;
       box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
       z-index: 9;
       top: 3rem;
       right: 3rem;
       border: 2px solid #839aff;
-      transition: all .2s; }
+      transition: all 0.2s; }
       .delivery__map__link:hover {
-        padding: .5rem 4rem .5rem 1.5rem;
+        padding: 0.5rem 4rem 0.5rem 1.5rem;
         transform-origin: right; }
     .delivery__map__desclaimer {
       position: absolute;
