@@ -210,7 +210,7 @@ btnLeft.forEach(btn =>
   })
 );
 
-const menuButtons = [...btnMenuTabs, ...btnLeft, ...btnRight];
+const menuButtons = [...btnLeft, ...btnRight];
 
 menuButtons.forEach(btn =>
   btn.addEventListener('click', function (e) {
