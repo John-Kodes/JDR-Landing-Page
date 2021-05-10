@@ -6,15 +6,17 @@
 
   @media only screen and (max-width: 41em) {
     flex-direction: column-reverse;
-    height: 100rem;
   }
 
   &__guide {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    flex: 1;
     margin-right: 3rem;
+    width: 30%;
+
+    @media only screen and (max-width: 41em) {
+      width: 100%;
+    }
 
     @media only screen and (max-width: 41em) {
       flex-direction: row;
@@ -42,10 +44,11 @@
     }
 
     &__instructions {
-      flex: 1;
       display: flex;
       flex-direction: column;
       align-items: center;
+      height: 100%;
+
       padding: 3rem;
       border-radius: 1.7rem;
       background-color: $color-white-2;
@@ -57,6 +60,7 @@
 
       @media only screen and (max-width: 41em) {
         margin-left: 3rem;
+        min-height: 33rem;
       }
 
       @media only screen and (max-width: 25.62em) {
@@ -77,9 +81,14 @@
 
   &__map {
     position: relative;
-    flex: 2;
     border-radius: 1.7rem;
     box-shadow: 0 0.4rem 0.8rem rgba($color-black, 0.15);
+    height: 70rem;
+    width: 70%;
+
+    @media only screen and (max-width: 41em) {
+      width: 100%;
+    }
 
     background-image: linear-gradient(
       to bottom,
