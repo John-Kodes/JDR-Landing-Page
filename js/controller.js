@@ -231,6 +231,7 @@ menuButtons.forEach(btn =>
 // DELIVERY_____________________________________________________________________
 
 //// Tabbed component
+
 deliveryTabsContainer.addEventListener('click', function (e) {
   const clicked = e.target.closest('.btn--delivery');
 
@@ -247,6 +248,8 @@ deliveryTabsContainer.addEventListener('click', function (e) {
   document
     .querySelector(`.delivery__paragraph--${clicked.dataset.tab}`)
     .classList.add('delivery__paragraph--active');
+
+  if (clicked.classList.contains('call--us')) events.emit();
 });
 
 //////////////// GOOGLE MAPS
@@ -258,23 +261,162 @@ const restaurantCoords = {
 };
 
 //// Adding the map to the UI
-let infoWindow;
-
 function initMap() {
   const map = new google.maps.Map(document.getElementById('map'), {
     center: restaurantCoords,
-    zoom: 18,
+    zoom: 13, // 18, 13 for to show all area pricing
     disableDefaultUI: true,
     zoomControl: true,
   });
 
-  // Adding the marker
+  // ADDING THE MARKER________________
   const marker = new google.maps.Marker({
     position: restaurantCoords,
     icon:
       'https://cdn.discordapp.com/attachments/711222589892329516/824924384560283648/Google_marker.png',
     map: map,
   });
+
+  //// CREATING POLYGONS_______________
+  // Define the LatLng Coords for the polygon's path.
+  const greenAreaCoords = [
+    { lat: 25.278554, lng: 55.327074 },
+    { lat: 25.276609, lng: 55.315351 },
+    { lat: 25.273392, lng: 55.306747 },
+    { lat: 25.268654, lng: 55.307839 },
+    { lat: 25.262801, lng: 55.313037 },
+    { lat: 25.251786, lng: 55.329533 },
+    { lat: 25.258074, lng: 55.330517 },
+    { lat: 25.269269, lng: 55.342022 },
+  ];
+
+  // Constructing the polygon
+  const greenArea = new google.maps.Polygon({
+    paths: greenAreaCoords,
+    strokeColor: 'rgba(0, 190, 101, 0.685)',
+    strokeWeight: 1.5,
+    fillColor: '#00ff00',
+    fillOpacity: 0.2,
+  });
+
+  // RED_AREA
+  const redAreaCoords = [
+    { lat: 25.278554, lng: 55.327074 },
+    { lat: 25.276609, lng: 55.315351 },
+    { lat: 25.273392, lng: 55.306747 },
+    { lat: 25.268654, lng: 55.307839 },
+    { lat: 25.262801, lng: 55.313037 },
+    { lat: 25.26777, lng: 55.303467 },
+    { lat: 25.267517, lng: 55.297762 },
+    { lat: 25.266062, lng: 55.29494 },
+    { lat: 25.266528, lng: 55.292816 },
+    { lat: 25.268197, lng: 55.292644 },
+    { lat: 25.27076, lng: 55.295613 },
+    { lat: 25.272953, lng: 55.296171 },
+    { lat: 25.284725, lng: 55.318888 },
+    { lat: 25.297849, lng: 55.335743 },
+    { lat: 25.281104, lng: 55.355348 },
+    { lat: 25.269269, lng: 55.342022 },
+  ];
+
+  const redArea = new google.maps.Polygon({
+    paths: redAreaCoords,
+    strokeColor: 'rgba(190, 0, 57, 0.315)',
+    strokeWeight: 1.5,
+    fillColor: '#ff0000',
+    fillOpacity: 0.2,
+  });
+
+  // BLUE_AREA
+  const blueAreaCoords = [
+    { lat: 25.297849, lng: 55.335743 },
+    { lat: 25.281104, lng: 55.355348 },
+    { lat: 25.269269, lng: 55.342022 },
+    { lat: 25.258074, lng: 55.330517 },
+    { lat: 25.251786, lng: 55.329533 },
+    { lat: 25.255547, lng: 55.323795 },
+    { lat: 25.25102, lng: 55.320024 },
+    { lat: 25.260816, lng: 55.308847 },
+    { lat: 25.264541, lng: 55.301638 }, // 3rd st connect point
+    { lat: 25.258175, lng: 55.297609 },
+    { lat: 25.24659, lng: 55.285099 },
+    { lat: 25.235204, lng: 55.304489 },
+    { lat: 25.226989, lng: 55.321282 },
+    { lat: 25.226045, lng: 55.325252 },
+    { lat: 25.228887, lng: 55.332986 },
+    { lat: 25.239142, lng: 55.342768 },
+    { lat: 25.23, lng: 55.353261 },
+    { lat: 25.219244, lng: 55.375228 },
+    { lat: 25.2372, lng: 55.377417 },
+    { lat: 25.247901, lng: 55.38679 },
+    { lat: 25.25636, lng: 55.386746 },
+    { lat: 25.271022, lng: 55.395738 },
+    { lat: 25.287959, lng: 55.366377 }, // last connect point
+    { lat: 25.290736, lng: 55.354342 },
+    { lat: 25.301018, lng: 55.339118 },
+  ];
+
+  const blueArea = new google.maps.Polygon({
+    paths: blueAreaCoords,
+    strokeColor: 'rgba(28, 0, 190, 0.315)',
+    strokeWeight: 1.5,
+    fillColor: '#00a2ff',
+    fillOpacity: 0.2,
+  });
+
+  const orangeAreaCoords = [
+    { lat: 25.264541, lng: 55.301638 }, // 3rd st connect point
+    { lat: 25.258175, lng: 55.297609 },
+    { lat: 25.24659, lng: 55.285099 },
+    { lat: 25.235204, lng: 55.304489 },
+    { lat: 25.226989, lng: 55.321282 },
+    { lat: 25.226045, lng: 55.325252 },
+    { lat: 25.228887, lng: 55.332986 },
+    { lat: 25.239142, lng: 55.342768 },
+    { lat: 25.23, lng: 55.353261 },
+    { lat: 25.219244, lng: 55.375228 },
+    { lat: 25.2372, lng: 55.377417 },
+    { lat: 25.247901, lng: 55.38679 },
+    { lat: 25.25636, lng: 55.386746 },
+    { lat: 25.271022, lng: 55.395738 },
+    { lat: 25.287959, lng: 55.366377 }, // last connect point]
+    { lat: 25.289496, lng: 55.359715 },
+    { lat: 25.299983, lng: 55.363512 },
+    { lat: 25.305778, lng: 55.374144 },
+    { lat: 25.309247, lng: 55.377795 },
+    { lat: 25.303264, lng: 55.385076 },
+    { lat: 25.286793, lng: 55.427522 },
+    { lat: 25.275562, lng: 55.419511 },
+    { lat: 25.264707, lng: 55.409981 },
+    { lat: 25.246793, lng: 55.404533 },
+    { lat: 25.233115, lng: 55.403565 },
+    { lat: 25.220138, lng: 55.404971 },
+    { lat: 25.198393, lng: 55.396488 },
+    { lat: 25.180275, lng: 55.396662 },
+    { lat: 25.186101, lng: 55.364504 },
+    { lat: 25.184774, lng: 55.32629 },
+    { lat: 25.181018, lng: 55.315049 },
+    { lat: 25.216414, lng: 55.251826 },
+    { lat: 25.254254, lng: 55.283993 },
+    { lat: 25.264486, lng: 55.289573 },
+    // { lat: 0, lng: 0 },
+  ];
+
+  const orangeArea = new google.maps.Polygon({
+    paths: orangeAreaCoords,
+    strokeColor: 'rgba(190, 0, 0, 0.315)',
+    strokeWeight: 1.5,
+    fillColor: '#ff8800',
+    fillOpacity: 0.2,
+  });
+
+  // if (events.events.callUsTabActive) {
+  //   orangeArea.setMap(map);
+  //   blueArea.setMap(map);
+  //   redArea.setMap(map);
+  //   greenArea.setMap(map);
+  //   console.log('something');
+  // }
 }
 
 ////////////// Initialization

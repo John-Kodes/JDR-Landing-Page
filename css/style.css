@@ -702,7 +702,7 @@ button {
       .section-about__details {
         padding: 3rem 5rem; } }
     .section-about__details .heading-tertiary {
-      font-family: "pacifico", sans-serif;
+      font-family: 'pacifico', sans-serif;
       margin-bottom: 1.6rem;
       color: #ff4d00; }
     .section-about__details .heading-secondary {
@@ -781,7 +781,7 @@ button {
     background-size: cover;
     filter: brightness(60%);
     transform: scale(1.2);
-    transition: all .4s; }
+    transition: all 0.4s; }
     .section-gallery__img:hover {
       filter: brightness(100%);
       transform: scale(1.1); }
