@@ -232,6 +232,46 @@ menuButtons.forEach(btn =>
 
 //// Tabbed component
 
+// publisher/subscriber pattern
+// const events = {
+//   events: { callUsTabActive: false },
+
+//   emit: function () {
+//     events.callUsTabActive = !events.callUsTabActive;
+//     console.log(events.callUsTabActive);
+//   },
+// };
+
+// const pubsub = {
+//   events: {},
+//   subscribe: function (eventName, fn) {
+//     // checks if it doesnt exist then does it
+//     this.events[eventName] = this.events[eventName] || [];
+//     // and then adds the handler to the array
+//     this.events[eventName].push(fn);
+//   },
+//   unsubscribe: function (eventName, fn) {
+//     if (this.events[eventName]) {
+//       for (var i = 0; i < this.events[eventName].length; i++) {
+//         if (this.events[eventName][i] === fn) {
+//           this.events[eventName].splice(i, 1);
+//           break;
+//         }
+//       }
+//     }
+//   },
+//   // publish means trigger
+//   publish: function (eventName, data) {
+//     if (this.events[eventName]) {
+//       this.events[eventName].forEach(function (fn) {
+//         fn(data);
+//       });
+//     }
+//   },
+// };
+
+let btnClicked = false;
+
 deliveryTabsContainer.addEventListener('click', function (e) {
   const clicked = e.target.closest('.btn--delivery');
 
@@ -249,7 +289,13 @@ deliveryTabsContainer.addEventListener('click', function (e) {
     .querySelector(`.delivery__paragraph--${clicked.dataset.tab}`)
     .classList.add('delivery__paragraph--active');
 
-  if (clicked.classList.contains('call--us')) events.emit();
+  if (clicked.classList.contains('call--us') && !btnClicked) {
+    btnClicked = true;
+    initMap();
+  } else if (!clicked.classList.contains('call--us') && btnClicked) {
+    btnClicked = false;
+    initMap();
+  }
 });
 
 //////////////// GOOGLE MAPS
@@ -410,14 +456,28 @@ function initMap() {
     fillOpacity: 0.2,
   });
 
-  // if (events.events.callUsTabActive) {
-  //   orangeArea.setMap(map);
-  //   blueArea.setMap(map);
-  //   redArea.setMap(map);
-  //   greenArea.setMap(map);
-  //   console.log('something');
-  // }
+  if (btnClicked) {
+    orangeArea.setMap(map);
+    blueArea.setMap(map);
+    redArea.setMap(map);
+    greenArea.setMap(map);
+  }
 }
+
+// increase performance
+(function () {
+  if (typeof EventTarget !== 'undefined') {
+    let func = EventTarget.prototype.addEventListener;
+    EventTarget.prototype.addEventListener = function (type, fn, capture) {
+      this.func = func;
+      if (typeof capture !== 'boolean') {
+        capture = capture || {};
+        capture.passive = false;
+      }
+      this.func(type, fn, capture);
+    };
+  }
+})();
 
 ////////////// Initialization
 

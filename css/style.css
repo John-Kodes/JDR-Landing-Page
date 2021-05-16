@@ -513,19 +513,60 @@ button {
     @media only screen and (max-width: 41em) {
       .delivery__map {
         width: 100%; } }
+    .delivery__map__info {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      right: 3rem;
+      top: 8rem;
+      background-color: white;
+      border: 2px solid #839aff;
+      border-radius: 2.9rem;
+      padding: 1rem;
+      font-weight: 600;
+      color: #363636;
+      z-index: 9; }
+      .delivery__map__info > * {
+        display: flex;
+        justify-content: center; }
+      .delivery__map__info > *:not(:last-child) {
+        margin-bottom: 1rem; }
+      .delivery__map__info--green {
+        background-image: linear-gradient(to right, #73eeaa, #e2f890);
+        padding: 0.2rem 1.5rem;
+        border-radius: 10rem;
+        border: 2px solid #2fdb7c; }
+      .delivery__map__info--red {
+        background-image: linear-gradient(to right, #ff9c9c, #ffdb8c);
+        padding: 0.2rem 1.5rem;
+        border-radius: 10rem;
+        border: 2px solid #ffb0ca; }
+      .delivery__map__info--blue {
+        background-image: linear-gradient(to right, #8ea8ff, #b8ffff);
+        padding: 0.2rem 1.5rem;
+        border-radius: 10rem;
+        border: 2px solid #b7caff; }
+      .delivery__map__info--orange {
+        background-image: linear-gradient(to right, #eea473, #ffed9c);
+        padding: 0.2rem 1.5rem;
+        border-radius: 10rem;
+        border: 2px solid #ffb795; }
+      .delivery__map__info--disclaimer {
+        font-size: 1.2rem;
+        font-weight: 600; }
     .delivery__map__link {
       position: absolute;
+      top: 3rem;
+      right: 3rem;
       text-decoration: none;
       color: #2a51ff;
       font-weight: 600;
       background-color: white;
       padding: 0.5rem 1.5rem;
       border-radius: 10rem;
+      border: 2px solid #839aff;
       box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
       z-index: 9;
-      top: 3rem;
-      right: 3rem;
-      border: 2px solid #839aff;
       transition: all 0.2s; }
       .delivery__map__link:hover {
         padding: 0.5rem 4rem 0.5rem 1.5rem;

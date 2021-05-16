@@ -96,19 +96,94 @@
       rgb(31, 31, 31)
     );
 
+    &__info {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      right: 3rem;
+      top: 8rem;
+
+      background-color: white;
+      border: 2px solid #839aff;
+      border-radius: 2.9rem;
+      padding: 1rem;
+      font-weight: 600;
+      color: rgb(54, 54, 54);
+
+      z-index: 9;
+
+      & > * {
+        display: flex;
+        justify-content: center;
+      }
+
+      & > *:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+      &--green {
+        background-image: linear-gradient(
+          to right,
+          rgb(115, 238, 170),
+          rgb(226, 248, 144)
+        );
+        padding: 0.2rem 1.5rem;
+        border-radius: 10rem;
+        border: 2px solid rgb(47, 219, 124);
+      }
+
+      &--red {
+        background-image: linear-gradient(
+          to right,
+          rgb(255, 156, 156),
+          rgb(255, 219, 140)
+        );
+        padding: 0.2rem 1.5rem;
+        border-radius: 10rem;
+        border: 2px solid rgb(255, 176, 202);
+      }
+
+      &--blue {
+        background-image: linear-gradient(
+          to right,
+          rgb(142, 168, 255),
+          rgb(184, 255, 255)
+        );
+        padding: 0.2rem 1.5rem;
+        border-radius: 10rem;
+        border: 2px solid rgb(183, 202, 255);
+      }
+
+      &--orange {
+        background-image: linear-gradient(
+          to right,
+          rgb(238, 164, 115),
+          rgb(255, 237, 156)
+        );
+        padding: 0.2rem 1.5rem;
+        border-radius: 10rem;
+        border: 2px solid rgb(255, 183, 149);
+      }
+
+      &--disclaimer {
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+    }
+
     &__link {
       position: absolute;
+      top: 3rem;
+      right: 3rem;
       text-decoration: none;
       color: #2a51ff;
       font-weight: 600;
+
       background-color: $color-white;
       padding: 0.5rem 1.5rem;
       border-radius: 10rem;
+      border: 2px solid #839aff;
       box-shadow: 0 0.4rem 0.8rem rgba($color-black, 0.2);
       z-index: 9;
-      top: 3rem;
-      right: 3rem;
-      border: 2px solid #839aff;
 
       transition: all 0.2s;
 
