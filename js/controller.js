@@ -230,46 +230,9 @@ menuButtons.forEach(btn =>
 
 // DELIVERY_____________________________________________________________________
 
+const pricingPlanWindow = document.querySelector('.delivery__map__info');
+
 //// Tabbed component
-
-// publisher/subscriber pattern
-// const events = {
-//   events: { callUsTabActive: false },
-
-//   emit: function () {
-//     events.callUsTabActive = !events.callUsTabActive;
-//     console.log(events.callUsTabActive);
-//   },
-// };
-
-// const pubsub = {
-//   events: {},
-//   subscribe: function (eventName, fn) {
-//     // checks if it doesnt exist then does it
-//     this.events[eventName] = this.events[eventName] || [];
-//     // and then adds the handler to the array
-//     this.events[eventName].push(fn);
-//   },
-//   unsubscribe: function (eventName, fn) {
-//     if (this.events[eventName]) {
-//       for (var i = 0; i < this.events[eventName].length; i++) {
-//         if (this.events[eventName][i] === fn) {
-//           this.events[eventName].splice(i, 1);
-//           break;
-//         }
-//       }
-//     }
-//   },
-//   // publish means trigger
-//   publish: function (eventName, data) {
-//     if (this.events[eventName]) {
-//       this.events[eventName].forEach(function (fn) {
-//         fn(data);
-//       });
-//     }
-//   },
-// };
-
 let btnClicked = false;
 
 deliveryTabsContainer.addEventListener('click', function (e) {
@@ -291,10 +254,12 @@ deliveryTabsContainer.addEventListener('click', function (e) {
 
   if (clicked.classList.contains('call--us') && !btnClicked) {
     btnClicked = true;
-    initMap();
+    initMap(13);
+    pricingPlanWindow.classList.remove('delivery__map__info--hide');
   } else if (!clicked.classList.contains('call--us') && btnClicked) {
     btnClicked = false;
     initMap();
+    pricingPlanWindow.classList.add('delivery__map__info--hide');
   }
 });
 
@@ -307,10 +272,10 @@ const restaurantCoords = {
 };
 
 //// Adding the map to the UI
-function initMap() {
+function initMap(zoom = 15) {
   const map = new google.maps.Map(document.getElementById('map'), {
     center: restaurantCoords,
-    zoom: 13, // 18, 13 for to show all area pricing
+    zoom: zoom, // 18, 13 for to show all area pricing
     disableDefaultUI: true,
     zoomControl: true,
   });
