@@ -304,7 +304,7 @@ function initMap(zoom = 15) {
   // Constructing the polygon
   const greenArea = new google.maps.Polygon({
     paths: greenAreaCoords,
-    strokeColor: 'rgba(0, 190, 101, 0.685)',
+    strokeColor: 'rgba(0, 190, 101, 0.1)',
     strokeWeight: 1.5,
     fillColor: '#00ff00',
     fillOpacity: 0.2,
@@ -332,7 +332,7 @@ function initMap(zoom = 15) {
 
   const redArea = new google.maps.Polygon({
     paths: redAreaCoords,
-    strokeColor: 'rgba(190, 0, 57, 0.315)',
+    strokeColor: 'rgba(190, 0, 57, 0.1)',
     strokeWeight: 1.5,
     fillColor: '#ff0000',
     fillOpacity: 0.2,
@@ -369,12 +369,13 @@ function initMap(zoom = 15) {
 
   const blueArea = new google.maps.Polygon({
     paths: blueAreaCoords,
-    strokeColor: 'rgba(28, 0, 190, 0.315)',
+    strokeColor: 'rgba(28, 0, 190, 0.1)',
     strokeWeight: 1.5,
     fillColor: '#00a2ff',
     fillOpacity: 0.2,
   });
 
+  // ORANGE_AREA
   const orangeAreaCoords = [
     { lat: 25.264541, lng: 55.301638 }, // 3rd st connect point
     { lat: 25.258175, lng: 55.297609 },
@@ -415,7 +416,7 @@ function initMap(zoom = 15) {
 
   const orangeArea = new google.maps.Polygon({
     paths: orangeAreaCoords,
-    strokeColor: 'rgba(190, 0, 0, 0.315)',
+    strokeColor: 'rgba(190, 0, 0, 0.1)',
     strokeWeight: 1.5,
     fillColor: '#ff8800',
     fillOpacity: 0.2,
